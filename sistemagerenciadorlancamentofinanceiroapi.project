@@ -1,7 +1,7 @@
+### Sistema Gerenciador de Lancamento Financeiro (APP)
 
-
-    --- Demandas
+    -- Demandas
 
         SISGERLANFIN25072023110326
 
-            - Feature: Implementar Cadastro de Pessoas integrada com API
+            Feature: Implementar Cadastro de Pessoas integrada com API

@@ -1,0 +1,45 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-text-center">
+
+    <ion-buttons slot="start">
+      <ion-button routerLink="/pessoa">
+        <ion-icon name="arrow-back-outline" style="font-size: 26px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      <b>Cadastro de Pessoa</b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <section>
+
+    <form [formGroup]="formulario" (ngSubmit)="create()">
+
+      <ion-list>
+
+        <ion-item>
+          <ion-select label="Tipo de Pessoa" name="codigoTipoPessoa" formControlName="codigoTipoPessoa" placeholder="Selecione o Tipo da Pessoa" cancel-text="Cancelar" ok-text="Escolher">
+            <ion-select-option value="1">Pessoa Física</ion-select-option>
+            <ion-select-option value="2">Pessoa Jurídica</ion-select-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-input label="Nome da Pessoa" name="nome" formControlName="nome" labelPlacement="floating" placeholder="Informe do nome da pessoa"></ion-input>
+        </ion-item>
+    
+      </ion-list>
+    
+      <ion-button type="submit" expand="block" [disabled]="isFormularioValido()">
+        <ion-text>Cadastrar Pessoa</ion-text>
+      </ion-button>
+
+    </form>
+
+  </section>
+
+</ion-content>

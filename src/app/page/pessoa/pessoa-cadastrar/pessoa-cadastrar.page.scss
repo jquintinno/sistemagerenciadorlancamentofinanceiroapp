@@ -1,0 +1,17 @@
+ion-content {
+    ion-list {
+        margin-top: 4vh;
+        ion-item {
+            padding: 10px;
+        }
+    }
+    ion-button {
+        height: 50px;
+        width: 90%;
+        margin: 0 auto;
+        ion-text {
+            text-transform: initial;
+            font-size: 16px;
+        }
+    }
+}
