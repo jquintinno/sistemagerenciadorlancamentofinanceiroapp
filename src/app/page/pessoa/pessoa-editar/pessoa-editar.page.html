@@ -1,0 +1,20 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="ion-text-center">
+
+    <ion-buttons slot="start">
+      <ion-button routerLink="/pessoa">
+        <ion-icon name="arrow-back-outline" style="font-size: 26px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      <b>Editar dados da Pessoa</b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  {{ pessoa | json }}
+
+</ion-content>

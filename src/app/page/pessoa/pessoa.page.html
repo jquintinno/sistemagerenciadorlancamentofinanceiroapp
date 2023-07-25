@@ -4,13 +4,16 @@
 
     <ion-buttons slot="start">
       <ion-button>
-        <ion-icon name="arrow-back-outline"></ion-icon>
+        <ion-icon name="arrow-back-outline" style="font-size: 25px;"></ion-icon>
       </ion-button>
     </ion-buttons>
 
-    <ion-title>Pessoas</ion-title>
+    <ion-title class="ion-text-center">Pessoas</ion-title>
 
     <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline" style="font-size: 25px;"></ion-icon>
+      </ion-button>
       <ion-button routerLink="/pessoa/pessoa-cadastrar">
         <ion-icon name="add" style="font-size: 30px;"></ion-icon>
       </ion-button>
@@ -21,5 +24,26 @@
 </ion-header>
 
 <ion-content>
+
+  <section>
+
+    <ion-list>
+
+      <ion-grid>
+        <ion-item *ngFor="let item of pessoaList" detail="true" style="padding: 6px;">
+          <ion-row (click)="redirecionarTelaPessoaEditar(item.codigo)">
+            <ion-col>
+              <ion-label>
+                <b>{{item.nome}}</b>
+                <p>{{item.tipoPessoaEnumeration}}</p>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+      </ion-grid>
+
+    </ion-list>
+
+  </section>
 
 </ion-content>

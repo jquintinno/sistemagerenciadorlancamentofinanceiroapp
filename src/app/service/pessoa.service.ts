@@ -16,4 +16,12 @@ export class PessoaService {
     return this.httpClient.post<any>("http://localhost:8080/pessoa", pessoa);
   }
 
+  public searchAll() : Observable<any[]> {
+    return this.httpClient.get<any[]>("http://localhost:8080/pessoa");
+  }
+
+  public searchOne(codigoPessoa: number) {
+    return this.httpClient.get<any>(`http://localhost:8080/pessoa/${codigoPessoa}`);
+  }
+
 }
