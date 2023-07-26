@@ -24,4 +24,8 @@ export class PessoaService {
     return this.httpClient.get<any>(`http://localhost:8080/pessoa/${codigoPessoa}`);
   }
 
+  public recuperarTipoPessoa() : Observable<any[]> {
+    return this.httpClient.get<any[]>("http://localhost:8080/pessoa/tipo-pessoa");
+  }
+
 }

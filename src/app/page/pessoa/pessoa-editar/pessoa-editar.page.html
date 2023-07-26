@@ -15,6 +15,30 @@
 
 <ion-content>
 
-  {{ pessoa | json }}
+  <section>
+
+    <form [formGroup]="formulario" (ngSubmit)="update()">
+
+      <ion-list>
+
+        <ion-item>
+          <ion-select label="Tipo de Pessoa" name="tipoPessoa" formControlName="tipoPessoa" placeholder="Selecione o Tipo da Pessoa" cancel-text="Cancelar" ok-text="Escolher">
+            <ion-select-option *ngFor="let item of tipoPessoaList" [value]="item"> {{ item.descricao }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+    
+        <ion-item>
+          <ion-input label="Nome da Pessoa" name="nome" formControlName="nome" labelPlacement="floating" placeholder="Informe do nome da pessoa"></ion-input>
+        </ion-item>
+    
+      </ion-list>
+    
+      <ion-button type="submit" expand="block" [disabled]="isFormularioValido()">
+        <ion-text>Cadastrar Pessoa</ion-text>
+      </ion-button>
+
+    </form>
+
+  </section>
 
 </ion-content>

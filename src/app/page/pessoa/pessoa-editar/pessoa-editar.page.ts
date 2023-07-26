@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoadingController, ToastController } from '@ionic/angular';
 import { PessoaService } from 'src/app/service/pessoa.service';
 
 @Component({
@@ -13,22 +15,94 @@ export class PessoaEditarPage implements OnInit {
 
   public pessoa: any;
 
+  public tipoPessoaList: any[] = [];
+
+  public formulario = new FormGroup({
+    tipoPessoa: new FormControl("", [Validators.required]),
+    nome: new FormControl("", [Validators.required])
+  });
+
   constructor(
     private activatedRoute: ActivatedRoute,
-    private pessoaService: PessoaService
+    private pessoaService: PessoaService,
+    private toastController: ToastController,
+    private router: Router,
+    private loadingController: LoadingController
   ) { }
 
   ngOnInit() { 
     this.recuperarPessoa();
+    this.recuperarTipoPessoa();
+  }
+
+  public update() {
+    const pessoa = {
+      tipoPessoa: this.formulario.controls["tipoPessoa"].value,
+      nome: this.formulario.controls["nome"].value
+    };
+    // this.pessoaService.create(pessoa).subscribe( response => {
+    //   this.limparCamposFormulario(); 
+    //   this.showMensagemSucesso();
+    //   this.redirecionarTelaGerenciadorPessoa();
+    // }, error => {
+    //   this.showMensagemErro();
+    // });
+  }
+
+  public limparCamposFormulario() {
+    this.formulario.reset();
+  }
+
+  public isFormularioValido() : Boolean {
+    return !this.formulario.valid;
+  }
+
+  public async showMensagemSucesso() {
+    const toast = await this.toastController.create({
+      message: "Pessoa Cadastrada com Sucesso!",
+      duration: 2000
+    });
+    return toast.present();
+  }
+
+  public async showMensagemErro() {
+    const toast = await this.toastController.create({
+      message: "Ocorreu um erro ao tentar salvar os dados da Pessoa!",
+      duration: 2000,
+      color: 'danger',
+      position: "top"
+    });
+    return toast.present();
+  }
+
+  private redirecionarTelaGerenciadorPessoa() {
+    setTimeout(() => {
+      this.router.navigateByUrl("/pessoa");
+    }, 1000);
+  }
+
+  private async apresentarCarregamento() {
+    const loading = await this.loadingController.create({
+      message: "Salvando dados...",
+      spinner: "bubbles"
+    });
+    return loading.present();
   }
 
   public recuperarPessoa() {
     this.codigoPessoa = this.activatedRoute.snapshot.params["codigoPessoa"];
-    console.log(this.codigoPessoa);
-    
     this.pessoaService.searchOne(this.codigoPessoa).subscribe( response => {
-      console.table(response);
       this.pessoa = response;
+      this.formulario.controls["tipoPessoa"].setValue(this.pessoa.tipoPessoaEnumeration);
+      this.formulario.controls["nome"].setValue(this.pessoa.nome);
+      console.table(this.pessoa);
+    });
+  }
+
+  public recuperarTipoPessoa() {
+    this.pessoaService.recuperarTipoPessoa().subscribe( response => {
+      this.tipoPessoaList = response;    
+      console.table(this.tipoPessoaList);
     });
   }
 
