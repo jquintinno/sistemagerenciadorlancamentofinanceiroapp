@@ -11,8 +11,10 @@ import { PessoaService } from 'src/app/service/pessoa.service';
 })
 export class PessoaCadastrarPage implements OnInit {
 
+  public tipoPessoaList: any[] = [];
+
   public formulario = new FormGroup({
-    codigoTipoPessoa: new FormControl("", [Validators.required]),
+    tipoPessoa: new FormControl("", [Validators.required]),
     nome: new FormControl("", [Validators.required])
   });
 
@@ -23,11 +25,13 @@ export class PessoaCadastrarPage implements OnInit {
     private loadingController: LoadingController
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.recuperarTipoPessoa();
+  }
 
   public create() {
     const pessoa = {
-      tipoPessoa: Number(this.formulario.controls["codigoTipoPessoa"].value) == 1 ? 'PESSOA_FISICA' : 'PESSOA_JURIDICA',
+      tipoPessoa: this.formulario.controls["tipoPessoa"].value,
       nome: this.formulario.controls["nome"].value
     };
     this.pessoaService.create(pessoa).subscribe( response => {
@@ -77,6 +81,12 @@ export class PessoaCadastrarPage implements OnInit {
       spinner: "bubbles"
     });
     return loading.present();
+  }
+
+  public recuperarTipoPessoa() {
+    this.pessoaService.recuperarTipoPessoa().subscribe( response => {
+      this.tipoPessoaList = response;
+    });
   }
 
 }

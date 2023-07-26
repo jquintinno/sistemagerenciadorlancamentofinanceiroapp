@@ -22,8 +22,8 @@
       <ion-list>
 
         <ion-item>
-          <ion-select label="Tipo de Pessoa" name="tipoPessoa" formControlName="tipoPessoa" placeholder="Selecione o Tipo da Pessoa" cancel-text="Cancelar" ok-text="Escolher">
-            <ion-select-option *ngFor="let item of tipoPessoaList" [value]="item"> {{ item.descricao }}</ion-select-option>
+          <ion-select label="Tipo de Pessoa" name="codigoTipoPessoa" formControlName="codigoTipoPessoa" placeholder="Selecione o Tipo da Pessoa" cancel-text="Cancelar" ok-text="Escolher">
+            <ion-select-option *ngFor="let item of tipoPessoaList" [value]="item.codigo"> {{ item.descricao }}</ion-select-option>
           </ion-select>
         </ion-item>
     

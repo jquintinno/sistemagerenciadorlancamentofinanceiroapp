@@ -27,19 +27,10 @@ export class PessoaPage implements OnInit {
   public searchAll() {
     this.pessoaService.searchAll().subscribe( response => {
       this.pessoaList = response;
-      this.pessoaList.forEach( item => {
-        if (item.tipoPessoaEnumeration === "PESSOA_FISICA") {
-          item.tipoPessoaEnumeration = "Pessoa Física";
-        } else {
-          item.tipoPessoaEnumeration = "Pessoa Jurídica";
-        }
-      });
     });
   }
 
   public redirecionarTelaPessoaEditar(codigoPessoa: number) {
-    // this.router.navigate([`/pessoa/pessoa-editar/${codigoPessoa}`]);
-    // this.router.navigate([`/pessoa/pessoa-editar`, {codigo: codigoPessoa}]);
     this.router.navigate(['/pessoa/pessoa-editar', codigoPessoa]);
   }
 

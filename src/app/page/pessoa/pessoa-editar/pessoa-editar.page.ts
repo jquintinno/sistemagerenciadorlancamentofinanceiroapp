@@ -18,7 +18,7 @@ export class PessoaEditarPage implements OnInit {
   public tipoPessoaList: any[] = [];
 
   public formulario = new FormGroup({
-    tipoPessoa: new FormControl("", [Validators.required]),
+    codigoTipoPessoa: new FormControl("", [Validators.required]),
     nome: new FormControl("", [Validators.required])
   });
 
@@ -36,10 +36,9 @@ export class PessoaEditarPage implements OnInit {
   }
 
   public update() {
-    const pessoa = {
-      tipoPessoa: this.formulario.controls["tipoPessoa"].value,
-      nome: this.formulario.controls["nome"].value
-    };
+    this.pessoa.tipoPessoa = this.formulario.controls["codigoTipoPessoa"].value;
+    this.pessoa.nome = this.formulario.controls["nome"].value;
+    console.log(this.pessoa);
     // this.pessoaService.create(pessoa).subscribe( response => {
     //   this.limparCamposFormulario(); 
     //   this.showMensagemSucesso();
@@ -93,16 +92,14 @@ export class PessoaEditarPage implements OnInit {
     this.codigoPessoa = this.activatedRoute.snapshot.params["codigoPessoa"];
     this.pessoaService.searchOne(this.codigoPessoa).subscribe( response => {
       this.pessoa = response;
-      this.formulario.controls["tipoPessoa"].setValue(this.pessoa.tipoPessoaEnumeration);
+      this.formulario.controls["codigoTipoPessoa"].setValue(this.pessoa.tipoPessoa.codigo);
       this.formulario.controls["nome"].setValue(this.pessoa.nome);
-      console.table(this.pessoa);
     });
   }
 
   public recuperarTipoPessoa() {
     this.pessoaService.recuperarTipoPessoa().subscribe( response => {
-      this.tipoPessoaList = response;    
-      console.table(this.tipoPessoaList);
+      this.tipoPessoaList = response;
     });
   }
 
