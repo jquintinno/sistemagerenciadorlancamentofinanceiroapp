@@ -33,8 +33,8 @@
     <ion-list>
 
       <ion-grid>
-        <ion-item *ngFor="let item of pessoaList" detail="true" style="padding: 6px;">
-          <ion-row (click)="redirecionarTelaPessoaEditar(item.codigo)">
+        <ion-item *ngFor="let item of pessoaList" detail="true" (click)="redirecionarTelaPessoaEditar(item.codigo)" style="padding: 6px;">
+          <ion-row>
             <ion-col>
               <ion-label>
                 <b>{{item.nome}}</b>

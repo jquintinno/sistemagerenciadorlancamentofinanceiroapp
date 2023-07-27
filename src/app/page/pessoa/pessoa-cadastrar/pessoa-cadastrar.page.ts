@@ -86,7 +86,20 @@ export class PessoaCadastrarPage implements OnInit {
   public recuperarTipoPessoa() {
     this.pessoaService.recuperarTipoPessoa().subscribe( response => {
       this.tipoPessoaList = response;
+    }, error => {
+      this.showMensagemErro();
+      this.redirecionarTelaGerenciadorPessoa();
     });
+  }
+
+  public async showMensagemErroConexao() {
+    const toast = await this.toastController.create({
+      message: "Falha na conexão da API!",
+      duration: 2000,
+      color: 'danger',
+      position: "top"
+    });
+    return toast.present();
   }
 
 }
