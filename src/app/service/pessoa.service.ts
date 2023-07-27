@@ -12,7 +12,6 @@ export class PessoaService {
   ) { }
 
   public create(pessoa: any) : Observable<any> {
-    console.table(pessoa);    
     return this.httpClient.post<any>("http://localhost:8080/pessoa", pessoa);
   }
 
@@ -26,6 +25,10 @@ export class PessoaService {
 
   public recuperarTipoPessoa() : Observable<any[]> {
     return this.httpClient.get<any[]>("http://localhost:8080/pessoa/tipo-pessoa");
+  }
+
+  public updateOne(pessoa: any) : Observable<any> {
+    return this.httpClient.put<any>("http://localhost:8080/pessoa", pessoa);
   }
 
 }

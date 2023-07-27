@@ -36,16 +36,22 @@ export class PessoaEditarPage implements OnInit {
   }
 
   public update() {
+    this.pessoa.codigo = this.codigoPessoa;
     this.pessoa.tipoPessoa = this.formulario.controls["codigoTipoPessoa"].value;
     this.pessoa.nome = this.formulario.controls["nome"].value;
-    console.log(this.pessoa);
-    // this.pessoaService.create(pessoa).subscribe( response => {
-    //   this.limparCamposFormulario(); 
-    //   this.showMensagemSucesso();
-    //   this.redirecionarTelaGerenciadorPessoa();
-    // }, error => {
-    //   this.showMensagemErro();
-    // });
+    this.tipoPessoaList.forEach( item => {
+      if (item.codigo === this.pessoa.tipoPessoa) {
+        this.pessoa.tipoPessoa = item;
+      }
+    });
+
+    this.pessoaService.updateOne(this.pessoa).subscribe( response => {
+      this.limparCamposFormulario(); 
+      this.showMensagemSucesso();
+      this.redirecionarTelaGerenciadorPessoa();
+    }, error => {
+      this.showMensagemErro();
+    });
   }
 
   public limparCamposFormulario() {
@@ -58,7 +64,7 @@ export class PessoaEditarPage implements OnInit {
 
   public async showMensagemSucesso() {
     const toast = await this.toastController.create({
-      message: "Pessoa Cadastrada com Sucesso!",
+      message: "Dados atualizados com Sucesso!",
       duration: 2000
     });
     return toast.present();
