@@ -5,3 +5,12 @@
         SISGERLANFIN25072023110326
 
             Feature: Implementar Cadastro de Pessoas integrada com API
+
+    -- Comandos
+
+        -- Instalar NodeJS (Linux Mint)
+
+            sudo apt install curl build-essential
+            sudo apt install -y nodejs npm
+            npm install n -g
+            n stable
