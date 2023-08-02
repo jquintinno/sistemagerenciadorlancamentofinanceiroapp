@@ -6,6 +6,10 @@
 
             Feature: Implementar Cadastro de Pessoas integrada com API
 
+        SISGERLANFIN02082023180359
+
+            Feature: Implementar Cadastro de Produto ou Serviço integrada com API
+
     -- Comandos
 
         -- Instalar NodeJS (Linux Mint)
