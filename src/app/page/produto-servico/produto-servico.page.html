@@ -1,0 +1,58 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="arrow-back-outline" style="font-size: 25px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title class="ion-text-center">
+      <b>Produtos e Serviços</b>
+    </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="search-outline" style="font-size: 25px;"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="refresh-outline" style="font-size: 25px;"></ion-icon>
+      </ion-button>
+      <ion-button routerLink="/produto-servico/produto-servico-cadastrar">
+        <ion-icon name="add" style="font-size: 30px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="none">
+
+      <ion-item-sliding *ngFor="let item of produtoServicoList">
+
+        <ion-item-options side="start">
+          <ion-item-option color="danger">Excluir</ion-item-option>
+        </ion-item-options>
+
+        <ion-item detail="true">
+          <ion-row style="padding: 12px;">
+            <ion-col>
+              <ion-label>
+                <ion-label>{{item.nome}}</ion-label>
+                <p>{{item.descricao}}</p>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-item>
+
+        <ion-item-options side="end" (click)="redirecionarTelaEditar(item.codigo)">
+          <ion-item-option color="secondary">Editar</ion-item-option>
+        </ion-item-options>
+        
+      </ion-item-sliding>
+
+  </ion-list>
+
+</ion-content>

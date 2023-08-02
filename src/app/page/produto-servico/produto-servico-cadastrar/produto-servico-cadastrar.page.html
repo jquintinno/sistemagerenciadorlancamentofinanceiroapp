@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>produto-servico-cadastrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form [formGroup]="fomulario" (ngSubmit)="createOne()">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-input label="Nome do Produto ou Serviço" name="nome" formControlName="nome" labelPlacement="floating" placeholder="Informe o nome do Produto ou Serviço"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Descrição do Produto ou Serviço" name="descricao" formControlName="descricao" labelPlacement="floating" placeholder="Descrição do Produto ou Serviço"></ion-input>
+      </ion-item>
+  
+    </ion-list>
+  
+    <ion-button type="submit" expand="block">
+      <ion-text>Cadastrar</ion-text>
+    </ion-button>
+
+  </form>
+
+</ion-content>
