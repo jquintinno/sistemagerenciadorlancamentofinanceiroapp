@@ -1,0 +1,191 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" (click)="configuracaoUtilityService.redirecionarTelaContaBancaria()">
+      <ion-button>
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>Nova Conta Bancária</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <section id="sectionA" class="ion-padding">
+
+    <ion-label>
+      <ion-text>Saldo Atual da Conta</ion-text>
+      <p>R$ 00,00</p>
+    </ion-label>
+
+  </section>
+
+  <div class="borda">
+
+  </div>
+
+  <section id="sectionB">
+
+    <ion-grid>
+
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-icon name="business-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" style="margin-left: -40px;">
+          <ion-item lines="none" detail="false">
+            <ion-label>
+              <b style="color: #696969;">Pessoa Contratada</b>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3" style="margin-left: 40px;">
+          <ion-item lines="none" detail="false">
+            <ion-icon name="chevron-forward-outline" style="font-size: 20px; margin-left: 20px;"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    
+      <div class="divisor"></div>
+    
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-icon name="person-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" style="margin-left: -40px;">
+          <ion-item lines="none" detail="false">
+            <ion-label>
+              <b style="color: #696969;">Pessoa Contratante</b>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3" style="margin-left: 40px;">
+          <ion-item lines="none" detail="false">
+            <ion-icon name="chevron-forward-outline" style="font-size: 20px; margin-left: 20px;"></ion-icon>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    
+      <div class="divisor"></div>
+    
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-icon name="copy-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" style="margin-left: -40px;">
+          <ion-item lines="none" detail="false">
+            <ion-label>
+              <b style="color: #696969;">Categoria</b>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3" style="margin-left: 40px;">
+          <ion-item lines="none" detail="false">
+            <ion-icon name="chevron-forward-outline" style="font-size: 20px; margin-left: 20px;"></ion-icon>
+          </ion-item>
+        </ion-col>
+    
+      </ion-row>
+    
+      <div class="divisor"></div>
+    
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-icon name="pricetags-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="9" style="margin-left: -40px;">
+          <ion-item lines="none" detail="false">
+            <ion-input type="text" placeholder="Número da Conta Bancária"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    
+      <div class="divisor"></div>
+    
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-icon name="pricetag-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="9" style="margin-left: -40px;">
+          <ion-item lines="none" detail="false">
+            <ion-input type="text" placeholder="Número da Agência"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    
+      <div class="divisor"></div>
+    
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-icon name="wallet-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="9" style="margin-left: -40px;">
+          <ion-item lines="none" detail="false">
+            <ion-input type="text" placeholder="Saldo Inicial"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <div class="divisor"></div>
+    
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-icon name="calendar-number-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="9" class="alinhamento-horizontal">
+          <ion-badge color="primary">Abertura</ion-badge>
+          <ion-badge color="primary">Encerramento</ion-badge>
+        </ion-col>
+      </ion-row>
+
+      <div class="divisor"></div>
+    
+      <ion-row>
+        <ion-col size="3">
+          <ion-item lines="none">
+            <ion-icon name="color-palette-outline"></ion-icon>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" style="margin-left: -40px;">
+          <ion-item lines="none" detail="false">
+            <ion-label>
+              <b style="color: #696969;">Cor da Conta</b>
+            </ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="3" style="margin-left: 40px;">
+          <ion-item lines="none" detail="false">
+            <ion-icon name="chevron-forward-outline" style="font-size: 20px; margin-left: 20px;"></ion-icon>
+          </ion-item>
+        </ion-col>
+    
+      </ion-row>
+    
+    </ion-grid>
+
+    <ion-fab horizontal="center">
+      <ion-fab-button [ngStyle]="{'--background': cor}">
+        <ion-icon name="checkmark"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+  </section>
+
+</ion-content>

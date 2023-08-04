@@ -20,6 +20,14 @@ export class ConfiguracaoUtilityService {
     this.router.navigate([url, codigo]);
   }
 
+  public redirecionarTelaContaBancaria() {
+    this.router.navigate(['/conta-bancaria']);
+  }
+
+  public redirecionarTelaContaBancariaCadastrar() {
+    this.router.navigate(['/conta-bancaria/conta-bancaria-cadastrar']);
+  }
+
   public async apresentarToastSucesso(mensagem: String) {
     const toast = await this.toastController.create({
       message: mensagem.toString(),
