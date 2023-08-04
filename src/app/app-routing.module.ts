@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'produto-servico',
+    redirectTo: 'conta-bancaria',
     pathMatch: 'full'
   },
   {
@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'produto-servico',
     loadChildren: () => import('./page/produto-servico/produto-servico.module').then( m => m.ProdutoServicoPageModule)
+  },
+  {
+    path: 'conta-bancaria',
+    loadChildren: () => import('./page/conta-bancaria/conta-bancaria.module').then( m => m.ContaBancariaPageModule)
   },
 ];
 
