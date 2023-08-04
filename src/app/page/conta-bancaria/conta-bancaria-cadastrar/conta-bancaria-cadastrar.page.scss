@@ -15,6 +15,7 @@ ion-content { }
     background: #248479;
     color: #fefffe;
     height: 20vh;
+    // border-radius: 0px 0px 20px 20px;
     ion-label {
         font-size: 12px;
         p {
@@ -24,7 +25,6 @@ ion-content { }
             margin-top: 2vh;
         }
     }
-
 }
 
 #sectionB {
@@ -35,7 +35,7 @@ ion-content { }
                 ion-item {
                     --background: #fefffe;
                     ion-label, ion-input {
-                        font-size: 12px;
+                        font-size: 13px;
                         font-weight: bold;
                     }
                 }
@@ -51,7 +51,8 @@ ion-content { }
     height: 3vh;
     background: #fefffe;
     border-radius: 20px 20px 0px 0px;
-    margin-top: -30px;
+    margin-top: -50px;
+    position: fixed;
 }
 
 .divisor {
