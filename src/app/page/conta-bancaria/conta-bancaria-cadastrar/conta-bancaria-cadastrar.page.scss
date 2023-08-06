@@ -35,7 +35,7 @@ ion-content { }
                 ion-item {
                     --background: #fefffe;
                     ion-label, ion-input {
-                        font-size: 13px;
+                        font-size: 14px;
                         font-weight: bold;
                     }
                 }
@@ -52,7 +52,6 @@ ion-content { }
     background: #fefffe;
     border-radius: 20px 20px 0px 0px;
     margin-top: -50px;
-    position: fixed;
 }
 
 .divisor {
