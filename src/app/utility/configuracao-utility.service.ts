@@ -28,6 +28,10 @@ export class ConfiguracaoUtilityService {
     this.router.navigate(['/conta-bancaria/conta-bancaria-cadastrar']);
   }
 
+  public redirecionarTelaContaBancariaEditar() {
+    this.router.navigate(['/conta-bancaria/conta-bancaria-editar']);
+  }
+
   public async apresentarToastSucesso(mensagem: String) {
     const toast = await this.toastController.create({
       message: mensagem.toString(),
