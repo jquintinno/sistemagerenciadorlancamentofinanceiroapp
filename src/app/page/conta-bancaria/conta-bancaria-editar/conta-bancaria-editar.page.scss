@@ -22,6 +22,9 @@
 }
 
 .formulario {
+    margin-top: -26px;
+    background: white;
+    border-radius: 20px 20px 0px 0px;
     .row {
         display: flex;
         flex-direction: row;
@@ -41,9 +44,13 @@
             }
         }
         .campo {
-            // border: green 2px dashed;
             width: 70%;
             text-align: left;
+            color: #a8a5ae;
+            ion-input {
+                font-size: 16px;
+                font-weight: bold;
+            }
         }
         .acao {
             // border: blue 2px dashed;
@@ -51,18 +58,19 @@
             text-align: right;
             ion-icon {
                 font-size: 16px;
+                color: #5c5b5b;
             }
         }
     }
     .row:hover {
-        background: rgb(244, 244, 244);
+        background: rgba(244, 244, 244, 0.252);
         cursor: pointer;
     }
 }
 
 .divisor {
-    border: solid 0.6px silver;
+    border: solid 0.4px rgb(229, 229, 229);
     border-radius: 10px;
-    width: 90%;
+    width: 94%;
     margin: 0 auto;
 }
