@@ -9,7 +9,6 @@ export class ContaBancariaEditarPage implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
