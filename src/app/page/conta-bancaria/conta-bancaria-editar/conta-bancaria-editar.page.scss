@@ -1,0 +1,28 @@
+.background {
+    --background: blue;
+    color: white;
+}
+
+.saldo {
+    padding: 10px;
+    background: blue;
+    color: white;
+    // border: red 2px dashed;
+    display: flex;
+    justify-content: center;
+    ion-label {
+        b {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 8vw;
+        }
+        p {
+            font-size: 36px;
+            margin-top: 16px;
+            margin-bottom: 20px;
+            color: white;
+            font-weight: bold;
+        }
+    }
+}
