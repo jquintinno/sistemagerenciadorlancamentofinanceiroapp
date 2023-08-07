@@ -8,7 +8,7 @@ import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility
 })
 export class ContaBancariaCadastrarPage implements OnInit {
 
-  public cor: string = "#248479";
+  public cor: string = "red";
 
   constructor(
     public configuracaoUtilityService: ConfiguracaoUtilityService

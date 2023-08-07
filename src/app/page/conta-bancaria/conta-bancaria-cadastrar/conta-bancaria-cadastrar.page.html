@@ -1,5 +1,5 @@
 <ion-header [translucent]="true" class="ion-no-border">
-  <ion-toolbar>
+  <ion-toolbar [ngStyle]="{'--background': cor}">
 
     <ion-buttons slot="start" (click)="configuracaoUtilityService.redirecionarTelaContaBancaria()">
       <ion-button>
@@ -14,7 +14,7 @@
 
 <ion-content>
 
-  <section id="sectionA" class="ion-padding">
+  <section id="sectionA" [ngStyle]="{'background': cor}" class="ion-padding">
 
     <ion-label>
       <ion-text>Saldo Atual da Conta</ion-text>
