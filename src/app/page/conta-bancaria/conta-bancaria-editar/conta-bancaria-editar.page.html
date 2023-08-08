@@ -1,8 +1,8 @@
 <ion-header [translucent]="true" class="ion-no-border">
-  <ion-toolbar class="background">
+  <ion-toolbar  [ngStyle]="{'--background': cor}" class="background">
 
     <ion-buttons slot="start">
-      <ion-button>
+      <ion-button (click)="configuracaoUtilityService.redirecionarTelaContaBancaria()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -13,7 +13,7 @@
 
 <ion-content>
 
-  <div class="saldo">
+  <div [ngStyle]="{'background': cor}" class="saldo">
     <ion-label class="ion-text-center">
       Saldo Atual da Conta
       <p>R$ 100.000,00</p>
@@ -138,12 +138,31 @@
 
     </div>
 
-    <div class="divisor"></div>
+    <div *ngIf="bolHabilitarCampo" class="divisor"></div>
+
+    <div *ngIf="bolHabilitarCampo" class="row">
+
+      <div class="icone">
+        <ion-icon name="calendar-number-outline"></ion-icon>
+      </div>
+
+      <div class="campo">
+        <div class="centralizador">
+          <ion-badge [ngStyle]="{'--background': cor}">Data de Abertura</ion-badge>
+          <ion-badge [ngStyle]="{'--background': cor}">Data de Encerramento</ion-badge>
+        </div>
+      </div>
+
+      <div class="acao"></div>
+
+    </div>
 
   </div>
 
+  <ion-button fill="outline" color="{{cor}}" *ngIf="!bolHabilitarCampo" (click)="habilitarCampo()" [ngStyle]="{'color': cor}">MAIS</ion-button>
+
   <ion-fab vertical="botton" horizontal="center">
-    <ion-fab-button>
+    <ion-fab-button [ngStyle]="{'--background': cor}">
       <ion-icon name="checkmark"></ion-icon>
     </ion-fab-button>
   </ion-fab>

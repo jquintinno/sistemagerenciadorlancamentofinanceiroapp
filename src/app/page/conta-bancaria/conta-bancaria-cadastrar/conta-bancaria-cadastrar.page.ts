@@ -8,12 +8,22 @@ import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility
 })
 export class ContaBancariaCadastrarPage implements OnInit {
 
-  public cor: string = "red";
+  public cor: any = "blue";
+
+  public bolHabilitarCampo: boolean = false;
 
   constructor(
     public configuracaoUtilityService: ConfiguracaoUtilityService
   ) { }
 
   ngOnInit() { }
+
+  public habilitarCampo() : void {
+    if (this.bolHabilitarCampo === true) {
+      this.bolHabilitarCampo = false;
+    } else {
+      this.bolHabilitarCampo = true;
+    }
+  }
 
 }
