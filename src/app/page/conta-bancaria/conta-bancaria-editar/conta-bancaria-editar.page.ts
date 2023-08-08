@@ -13,7 +13,7 @@ export class ContaBancariaEditarPage implements OnInit {
   public bolHabilitarCampo: boolean = false;
 
   constructor(
-    public configuracaoUtilityService: ConfiguracaoUtilityService
+    public configuracaoUtilityService: ConfiguracaoUtilityService,
   ) { }
 
   ngOnInit() { }
