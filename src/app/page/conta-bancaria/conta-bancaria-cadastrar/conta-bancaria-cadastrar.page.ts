@@ -33,7 +33,12 @@ export class ContaBancariaCadastrarPage implements OnInit {
     const modal = await this.modalController.create({
       component: PessoaPesquisarModalPage,
       breakpoints: [0, 0.25, 0.50, 0.60, 0.75, 0.85, 0.90, 1],
-      initialBreakpoint: 0.60
+      initialBreakpoint: 0.95
+    });
+    modal.onDidDismiss().then( (parameter) => {
+      if (parameter.role !== 'backdrop') {
+        console.log(parameter?.data);
+      }
     });
     return await modal.present();
   }

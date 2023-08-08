@@ -33,21 +33,19 @@ ion-header {
 
 ion-content {
     .bloco1 {
+        height: 60px;
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        // border: blue dashed 2px;
-        padding: 10px;
-        .icone {
-                width: 14%;
-                img {
-                    width: 50px;
-                    height: 50px;
-                }
+        border-bottom: rgb(229, 229, 229) solid 1px;
+        ion-label {
+            margin-left: 8px;
+            b {
+                text-transform: uppercase;
             }
-        .nome-instituicao {
-            width: 86%;
-            margin-left: -20px;
         }
+    }
+    .bloco1:hover {
+        background: rgb(240, 240, 240);
+        border-radius: 20px;
     }
 }

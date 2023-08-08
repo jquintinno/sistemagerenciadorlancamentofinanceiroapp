@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,8 @@ export class ConfiguracaoUtilityService {
 
   constructor(
     private router: Router,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private modalController: ModalController
   ) { }
 
   public redirecionarPaginaProdutoServico() {
@@ -47,6 +48,14 @@ export class ConfiguracaoUtilityService {
 
   public limparCamposFormulario(formulario: any) {
     formulario.reset();
+  }
+
+  public async fecharModal() {
+    return await this.modalController.dismiss();
+  }
+
+  public async fecharModalParametro(parametro: any) {
+    return await this.modalController.dismiss(parametro);
   }
 
 }

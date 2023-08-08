@@ -96,7 +96,7 @@ export class PessoaEditarPage implements OnInit {
 
   public recuperarPessoa() {
     this.codigoPessoa = this.activatedRoute.snapshot.params["codigoPessoa"];
-    this.pessoaService.searchOne(this.codigoPessoa).subscribe( response => {
+    this.pessoaService.searchCode(this.codigoPessoa).subscribe( response => {
       this.pessoa = response;
       this.formulario.controls["codigoTipoPessoa"].setValue(this.pessoa.tipoPessoa.codigo);
       this.formulario.controls["nome"].setValue(this.pessoa.nome);
