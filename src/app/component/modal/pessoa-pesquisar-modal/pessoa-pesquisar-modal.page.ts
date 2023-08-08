@@ -13,6 +13,8 @@ export class PessoaPesquisarModalPage implements OnInit {
 
   public termoPesquisa: any;
 
+  public isLoading: boolean = false;
+
   constructor(
     private pessoaService: PessoaService,
     private configuracaoUtilityService: ConfiguracaoUtilityService
@@ -23,8 +25,10 @@ export class PessoaPesquisarModalPage implements OnInit {
   }
 
   public async recuperarPessoaJuridica() {
-    this.pessoaService.searchAll().subscribe( response => {
+    this.isLoading = true;
+    this.pessoaService.searchAll().subscribe(response => {
       this.pessoaList = response;
+      this.isLoading = false;
     });
   }
 

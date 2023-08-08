@@ -8,7 +8,7 @@ import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility
 })
 export class ContaBancariaEditarPage implements OnInit {
 
-  public cor: any = "blue";
+  public cor: any = "red";
 
   public bolHabilitarCampo: boolean = false;
 

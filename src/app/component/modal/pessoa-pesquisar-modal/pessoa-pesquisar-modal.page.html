@@ -18,4 +18,12 @@
     </ion-label>
   </div>
 
+  <div class="ion-text-center">
+    <ion-spinner name="circles" *ngIf="isLoading"></ion-spinner>
+  </div>
+
+  <div *ngIf="pessoaList.length == 0 && !isLoading" class="resultado-nao-encontrado">
+    <ion-text>Nenhum Resultado Encontrado</ion-text>
+  </div>
+
 </ion-content>

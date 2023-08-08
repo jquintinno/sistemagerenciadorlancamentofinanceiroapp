@@ -48,4 +48,11 @@ ion-content {
         background: rgb(240, 240, 240);
         border-radius: 20px;
     }
+    .resultado-nao-encontrado {
+        ion-text {
+            display: flex;
+            justify-content: center;
+            font-weight: bold;
+        }
+    }
 }
