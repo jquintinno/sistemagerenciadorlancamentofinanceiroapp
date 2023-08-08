@@ -14,7 +14,7 @@ export class ContaBancariaPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.configuracaoUtilityService.redirecionarTelaContaBancariaEditar();
+      this.configuracaoUtilityService.redirecionarTelaContaBancariaCadastrar();
     }, 1000);
   }
 

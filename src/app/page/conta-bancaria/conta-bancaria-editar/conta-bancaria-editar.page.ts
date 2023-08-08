@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility.service';
 
 @Component({
   selector: 'app-conta-bancaria-editar',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContaBancariaEditarPage implements OnInit {
 
-  constructor() { }
+  public cor: any = "blue";
 
-  ngOnInit() {
+  public bolHabilitarCampo: boolean = false;
+
+  constructor(
+    public configuracaoUtilityService: ConfiguracaoUtilityService,
+  ) { }
+
+  ngOnInit() { }
+
+  public habilitarCampo() : void {
+    if (this.bolHabilitarCampo === true) {
+      this.bolHabilitarCampo = false;
+    } else {
+      this.bolHabilitarCampo = true;
+    }
   }
 
 }
