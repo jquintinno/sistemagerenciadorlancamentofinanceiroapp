@@ -20,7 +20,7 @@ export class PessoaPesquisarModalPage implements OnInit {
     private configuracaoUtilityService: ConfiguracaoUtilityService
   ) { }
 
-  ngOnInit() { 
+  ngOnInit() {
     this.recuperarPessoaJuridica();
   }
 
