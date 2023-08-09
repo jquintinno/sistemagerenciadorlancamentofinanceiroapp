@@ -29,7 +29,8 @@
         </div>
   
         <div class="campo">
-          <b>Pessoa Contratada</b>
+          <b *ngIf="nomePessoaContrada == null">Pessoa Contratada</b>
+          <b *ngIf="nomePessoaContrada != null">{{nomePessoaContrada}}</b>
         </div>
   
         <div class="acao">

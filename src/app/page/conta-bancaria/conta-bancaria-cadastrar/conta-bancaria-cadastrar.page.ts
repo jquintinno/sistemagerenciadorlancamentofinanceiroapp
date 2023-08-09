@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { PessoaPesquisarModalPage } from 'src/app/component/modal/pessoa-pesquisar-modal/pessoa-pesquisar-modal.page';
 import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility.service';
@@ -13,6 +14,17 @@ export class ContaBancariaCadastrarPage implements OnInit {
   public cor: any = "red";
 
   public bolHabilitarCampo: boolean = false;
+
+  public nomePessoaContrada: any;
+
+  public formGroup = new FormGroup({
+    pessoaContrada: new FormControl("", [ Validators.required, Validators.minLength(3), Validators.maxLength(80) ]),
+    categoriaContaBancaria: new FormControl("", [ Validators.required, Validators.minLength(3), Validators.maxLength(80) ]),
+    numeroContaBancaria: new FormControl("", [ Validators.required, Validators.minLength(6), Validators.maxLength(6) ]),
+    agenciaContaBancaria: new FormControl("", [ Validators.required, Validators.minLength(8), Validators.maxLength(8) ]),
+    saldoInicial: new FormControl("", [ Validators.required, Validators.minLength(8), Validators.maxLength(8) ]),
+    corContaBancaria: new FormControl("", [ Validators.required, Validators.minLength(7), Validators.maxLength(7) ]),
+  });
 
   constructor(
     public configuracaoUtilityService: ConfiguracaoUtilityService,
@@ -37,7 +49,8 @@ export class ContaBancariaCadastrarPage implements OnInit {
     });
     modal.onDidDismiss().then( (parameter) => {
       if (parameter.role !== 'backdrop') {
-        console.log(parameter?.data);
+        this.formGroup.controls["pessoaContrada"].setValue(parameter.data);
+        this.nomePessoaContrada = parameter.data.nome;
       }
     });
     return await modal.present();
