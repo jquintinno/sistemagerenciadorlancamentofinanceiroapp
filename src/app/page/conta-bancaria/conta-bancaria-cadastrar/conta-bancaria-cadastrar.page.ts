@@ -12,7 +12,7 @@ import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility
 })
 export class ContaBancariaCadastrarPage implements OnInit {
 
-  public cor: any = "red";
+  public cor: any = "blue";
 
   public bolHabilitarCampo: boolean = false;
 
