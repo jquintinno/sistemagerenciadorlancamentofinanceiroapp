@@ -20,153 +20,158 @@
       </ion-label>
     </div>
   
-    <div class="formulario">
-  
-      <div (click)="redirecionarTelaModalPessoa()" class="row">
-  
-        <div class="icone">
-          <ion-icon name="business-outline"></ion-icon>
-        </div>
-  
-        <div class="campo">
-          <b *ngIf="nomePessoaContrada == null">Pessoa Contratada</b>
-          <b *ngIf="nomePessoaContrada != null">{{nomePessoaContrada}}</b>
-        </div>
-  
-        <div class="acao">
-          <ion-icon name="chevron-forward-outline"></ion-icon>
-        </div>
-  
-      </div>
-  
-      <!-- <div class="divisor"></div>
-  
-      <div class="row">
-  
-        <div class="icone">
-          <ion-icon name="person-outline"></ion-icon>
-        </div>
-  
-        <div class="campo">
-          <b>Pessoa Contratante</b>
-        </div>
-  
-        <div class="acao">
-          <ion-icon name="chevron-forward-outline"></ion-icon>
-        </div>
-  
-      </div> -->
-  
-      <div class="divisor"></div>
-  
-      <div class="row">
-  
-        <div class="icone">
-          <ion-icon name="copy-outline"></ion-icon>
-        </div>
-  
-        <div class="campo">
-          <b>Categoria da Conta Bancária</b>
-        </div>
-  
-        <div class="acao">
-          <ion-icon name="chevron-forward-outline"></ion-icon>
-        </div>
-  
-      </div>
-  
-      <div class="divisor"></div>
-  
-      <div class="row">
-  
-        <div class="icone">
-          <ion-icon name="pricetags-outline"></ion-icon>
-        </div>
-  
-        <div class="campo">
-          <ion-input type="number" placeholder="Número da Conta Bancária"></ion-input>
-        </div>
-  
-        <div class="acao"></div>
-  
-      </div>
-  
-      <div class="divisor"></div>
-  
-      <div class="row">
-  
-        <div class="icone">
-          <ion-icon name="pricetag-outline"></ion-icon>
-        </div>
-  
-        <div class="campo">
-          <ion-input type="number" placeholder="Número da Agência"></ion-input>
-        </div>
-  
-        <div class="acao"></div>
-  
-      </div>
-  
-      <div class="divisor"></div>
-  
-      <div class="row">
-  
-        <div class="icone">
-          <ion-icon name="wallet-outline"></ion-icon>
-        </div>
-  
-        <div class="campo">
-          <ion-input type="number" placeholder="Saldo Inicial"></ion-input>
-        </div>
-  
-        <div class="acao"></div>
-  
-      </div>
-  
-      <div class="divisor"></div>
-  
-      <div class="row">
-  
-        <div class="icone">
-          <ion-icon name="color-palette-outline"></ion-icon>
-        </div>
-  
-        <div class="campo">
-          <b>Cor da Conta</b>
-        </div>
-  
-        <div class="acao"></div>
-  
-      </div>
-  
-      <div *ngIf="bolHabilitarCampo" class="divisor"></div>
-  
-      <div *ngIf="bolHabilitarCampo" class="row">
-  
-        <div class="icone">
-          <ion-icon name="calendar-number-outline"></ion-icon>
-        </div>
-  
-        <div class="campo">
-          <div class="centralizador">
-            <ion-badge [ngStyle]="{'--background': cor}">Data de Abertura</ion-badge>
-            <ion-badge [ngStyle]="{'--background': cor}">Data de Encerramento</ion-badge>
+    <form [formGroup]="formGroup">
+    
+      <div class="formulario">
+    
+        <div (click)="redirecionarTelaModalPessoa()" class="row">
+    
+          <div class="icone">
+            <ion-icon name="business-outline"></ion-icon>
           </div>
+    
+          <div class="campo">
+            <b *ngIf="nomePessoaContrada == null">Pessoa Contratada</b>
+            <b *ngIf="nomePessoaContrada != null" [ngStyle]="{'color': cor}">{{nomePessoaContrada}}</b>
+          </div>
+    
+          <div class="acao">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+    
         </div>
-  
-        <div class="acao"></div>
-  
+    
+        <!-- <div class="divisor"></div>
+        
+            <div class="row">
+        
+              <div class="icone">
+                <ion-icon name="person-outline"></ion-icon>
+              </div>
+        
+              <div class="campo">
+                <b>Pessoa Contratante</b>
+              </div>
+        
+              <div class="acao">
+                <ion-icon name="chevron-forward-outline"></ion-icon>
+              </div>
+        
+            </div> -->
+    
+        <div class="divisor"></div>
+    
+        <div (click)="redirecionarTelaModalCategoriaContaBancaria()" class="row">
+    
+          <div class="icone">
+            <ion-icon name="copy-outline"></ion-icon>
+          </div>
+    
+          <div class="campo">
+            <b *ngIf="nomeCategoriaContaBancaria == null">Categoria da Conta Bancária</b>
+            <b *ngIf="nomeCategoriaContaBancaria != null" [ngStyle]="{'color': cor}">{{nomeCategoriaContaBancaria}}</b>
+          </div>
+    
+          <div class="acao">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </div>
+    
+        </div>
+    
+        <div class="divisor"></div>
+    
+        <div class="row">
+    
+          <div class="icone">
+            <ion-icon name="pricetags-outline"></ion-icon>
+          </div>
+    
+          <div class="campo">
+            <ion-input type="number" formControlName="numeroContaBancaria" placeholder="Número da Conta Bancária"></ion-input>
+          </div>
+    
+          <div class="acao"></div>
+    
+        </div>
+    
+        <div class="divisor"></div>
+    
+        <div class="row">
+    
+          <div class="icone">
+            <ion-icon name="pricetag-outline"></ion-icon>
+          </div>
+    
+          <div class="campo">
+            <ion-input type="number" formControlName="agenciaContaBancaria" placeholder="Número da Agência"></ion-input>
+          </div>
+    
+          <div class="acao"></div>
+    
+        </div>
+    
+        <div class="divisor"></div>
+    
+        <div class="row">
+    
+          <div class="icone">
+            <ion-icon name="wallet-outline"></ion-icon>
+          </div>
+    
+          <div class="campo">
+            <ion-input type="number" formControlName="saldoInicial" placeholder="Saldo Inicial"></ion-input>
+          </div>
+    
+          <div class="acao"></div>
+    
+        </div>
+    
+        <div class="divisor"></div>
+    
+        <div class="row">
+    
+          <div class="icone">
+            <ion-icon name="color-palette-outline"></ion-icon>
+          </div>
+    
+          <div class="campo">
+            <b>Cor da Conta</b>
+          </div>
+    
+          <div class="acao"></div>
+    
+        </div>
+    
+        <div *ngIf="bolHabilitarCampo" class="divisor"></div>
+    
+        <div *ngIf="bolHabilitarCampo" class="row">
+    
+          <div class="icone">
+            <ion-icon name="calendar-number-outline"></ion-icon>
+          </div>
+    
+          <div class="campo">
+            <div class="centralizador">
+              <ion-badge [ngStyle]="{'--background': cor}">Data de Abertura</ion-badge>
+              <ion-badge [ngStyle]="{'--background': cor}">Data de Encerramento</ion-badge>
+            </div>
+          </div>
+    
+          <div class="acao"></div>
+    
+        </div>
+    
       </div>
-  
-    </div>
-  
-    <ion-button fill="outline" color="{{cor}}" *ngIf="!bolHabilitarCampo" (click)="habilitarCampo()" [ngStyle]="{'color': cor}">MAIS</ion-button>
-  
+    
+      <ion-button fill="outline" color="{{cor}}" *ngIf="!bolHabilitarCampo" (click)="habilitarCampo()" [ngStyle]="{'color': cor}">MAIS</ion-button>
+
     <ion-fab vertical="botton" horizontal="center">
-      <ion-fab-button [ngStyle]="{'--background': cor}">
+      <ion-fab-button (click)="cadastrar()" [ngStyle]="{'--background': cor}">
         <ion-icon name="checkmark"></ion-icon>
       </ion-fab-button>
     </ion-fab>
+
+  </form>
   
   </ion-content>
   

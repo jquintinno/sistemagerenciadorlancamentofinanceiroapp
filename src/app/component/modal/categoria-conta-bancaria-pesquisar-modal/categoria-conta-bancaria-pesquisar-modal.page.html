@@ -1,0 +1,13 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Categoria da Conta Bancária</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngFor="let item of tipoContaBancariaList">
+    <ion-label (click)="selecionarTipoContaBancaria(item)">{{ item.descricao }}</ion-label>
+  </ion-item>
+
+</ion-content>

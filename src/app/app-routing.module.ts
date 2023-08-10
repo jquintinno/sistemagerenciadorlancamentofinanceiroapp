@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'pessoa-pesquisar-modal',
     loadChildren: () => import('./component/modal/pessoa-pesquisar-modal/pessoa-pesquisar-modal.module').then( m => m.PessoaPesquisarModalPageModule)
   },
+  {
+    path: 'categoria-conta-bancaria-pesquisar-modal',
+    loadChildren: () => import('./component/modal/categoria-conta-bancaria-pesquisar-modal/categoria-conta-bancaria-pesquisar-modal.module').then( m => m.CategoriaContaBancariaPesquisarModalPageModule)
+  },
 ];
 
 @NgModule({
