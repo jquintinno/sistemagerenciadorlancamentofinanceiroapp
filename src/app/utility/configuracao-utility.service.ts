@@ -37,11 +37,30 @@ export class ConfiguracaoUtilityService {
     this.router.navigate(['/pessoa-pesquisar-modal']);
   }
 
-  public async apresentarToastSucesso(mensagem: String) {
+  public async apresentarToastSucessoMensagem(mensagem: String) {
     const toast = await this.toastController.create({
       message: mensagem.toString(),
       duration: 2000,
       color: "success"
+    });
+    return await toast.present();
+  }
+
+  public async apresentarToastSucessoMensagemDuracao(mensagem: String, duracao: number) {
+    const toast = await this.toastController.create({
+      message: mensagem.toString(),
+      duration: duracao,
+      color: "success"
+    });
+    return await toast.present();
+  }
+
+  public async apresentarToastSucessoMensagemPosition(mensagem: String, position: string) {
+    const toast = await this.toastController.create({
+      message: mensagem.toString(),
+      duration: 2000,
+      color: "success",
+      position: "top"
     });
     return await toast.present();
   }

@@ -12,8 +12,8 @@
 
 <ion-content class="ion-padding">
 
-  <div *ngFor="let pessoa of pessoaList" class="bloco1">
-    <ion-label (click)="selecionarPessoa(pessoa)">
+  <div *ngFor="let pessoa of pessoaList" (click)="selecionarPessoa(pessoa)" class="bloco1">
+    <ion-label>
       <b>{{ pessoa.nome }}</b>
     </ion-label>
   </div>

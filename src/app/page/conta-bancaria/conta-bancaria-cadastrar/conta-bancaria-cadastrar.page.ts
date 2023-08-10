@@ -41,6 +41,7 @@ export class ContaBancariaCadastrarPage implements OnInit {
     this.formGroup.reset();
     this.nomePessoaContrada = null;
     this.nomeCategoriaContaBancaria = null;
+    this.configuracaoUtilityService.apresentarToastSucessoMensagemPosition("Conta Bancária Cadastrada com Sucesso!", "top");
   }
 
   public habilitarCampo() : void {

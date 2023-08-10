@@ -24,7 +24,7 @@ export class ProdutoServicoCadastrarPage implements OnInit {
 
   public createOne() {
     this.produtoServicoService.createOne(this.configurarProdutoServico()).subscribe( response => {
-      this.configuracaoUtilityService.apresentarToastSucesso("Produto ou Serviço Cadastrado com Sucesso!");
+      this.configuracaoUtilityService.apresentarToastSucessoMensagem("Produto ou Serviço Cadastrado com Sucesso!");
       this.configuracaoUtilityService.limparCamposFormulario(this.fomulario);
       setTimeout(() => {
         this.configuracaoUtilityService.redirecionarPaginaProdutoServico();
