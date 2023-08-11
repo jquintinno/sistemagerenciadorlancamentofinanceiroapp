@@ -87,7 +87,9 @@
           </div>
     
           <div class="campo">
-            <ion-input type="number" formControlName="numeroContaBancaria" (ionInput)="onChangeMaxLength($event, 'numeroContaBancaria', 10)" placeholder="Número da Conta Bancária" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-item lines="none">
+              <ion-input type="number" formControlName="numeroContaBancaria" (ionInput)="onChangeMaxLength($event, 'numeroContaBancaria', 10)" placeholder="Número da Conta Bancária" [ngStyle]="{'color': cor}"></ion-input>
+            </ion-item>
           </div>
     
           <div class="acao"></div>
@@ -103,7 +105,9 @@
           </div>
     
           <div class="campo">
-            <ion-input type="number" formControlName="agenciaContaBancaria" (ionInput)="onChangeMaxLength($event, 'agenciaContaBancaria', 10)" placeholder="Número da Agência" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-item lines="none">
+              <ion-input type="number" formControlName="agenciaContaBancaria" (ionInput)="onChangeMaxLength($event, 'agenciaContaBancaria', 10)" placeholder="Número da Agência" [ngStyle]="{'color': cor}"></ion-input>
+            </ion-item>
           </div>
     
           <div class="acao"></div>
@@ -119,7 +123,9 @@
           </div>
     
           <div class="campo">
-            <ion-input type="number" formControlName="saldoInicial" (ionInput)="onChangeMaxLength($event, 'saldoInicial', 10)" (ionInput)="exibirSaldoInicial()" placeholder="Saldo Inicial" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-item lines="none">
+              <ion-input type="number" formControlName="saldoInicial" (ionInput)="onChangeMaxLength($event, 'saldoInicial', 10)" (ionInput)="exibirSaldoInicial()" placeholder="Saldo Inicial" [ngStyle]="{'color': cor}"></ion-input>
+            </ion-item>
           </div>
     
           <div class="acao"></div>

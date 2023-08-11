@@ -12,7 +12,7 @@ import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility
 })
 export class ContaBancariaCadastrarPage implements OnInit {
 
-  public cor: any = "blue";
+  public cor: any = "green";
 
   public bolHabilitarCampo: boolean = false;
 
@@ -44,6 +44,7 @@ export class ContaBancariaCadastrarPage implements OnInit {
       this.formGroup.reset();
       this.nomePessoaContrada = null;
       this.nomeCategoriaContaBancaria = null;
+      this.saldoInicial = 0;
       this.configuracaoUtilityService.apresentarToastSucessoMensagemPosition("Conta Bancária Cadastrada com Sucesso!", "top");
     }
   }
