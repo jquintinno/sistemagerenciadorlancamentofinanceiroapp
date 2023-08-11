@@ -48,7 +48,6 @@ export class PessoaPesquisarModalPage implements OnInit {
         }
         this.pessoaOrdenadaList[this.pessoaOrdenadaList.length - 1].pessoaGrupoList.push(pessoa);
       }
-      console.log(this.pessoaOrdenadaList);
     });
 
   }

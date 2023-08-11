@@ -20,13 +20,15 @@ export class ContaBancariaCadastrarPage implements OnInit {
 
   public nomeCategoriaContaBancaria: any;
 
+  public saldoInicial: number = 0;
+
   public formGroup = new FormGroup({
-    pessoaContrada: new FormControl("", [ Validators.required, Validators.minLength(3), Validators.maxLength(80) ]),
-    categoriaContaBancaria: new FormControl("", [ Validators.required, Validators.minLength(3), Validators.maxLength(80) ]),
-    numeroContaBancaria: new FormControl("", [ Validators.required, Validators.minLength(6), Validators.maxLength(6) ]),
-    agenciaContaBancaria: new FormControl("", [ Validators.required, Validators.minLength(8), Validators.maxLength(8) ]),
-    saldoInicial: new FormControl("", [ Validators.required, Validators.minLength(8), Validators.maxLength(8) ]),
-    corContaBancaria: new FormControl("", [ Validators.required, Validators.minLength(7), Validators.maxLength(7) ]),
+    pessoaContrada: new FormControl("", [ Validators.required ]),
+    categoriaContaBancaria: new FormControl("", [ Validators.required ]),
+    numeroContaBancaria: new FormControl("", [ Validators.required ]),
+    agenciaContaBancaria: new FormControl("", [ Validators.required ]),
+    saldoInicial: new FormControl("", [ Validators.required ]),
+    corContaBancaria: new FormControl(""),
   });
 
   constructor(
@@ -37,11 +39,27 @@ export class ContaBancariaCadastrarPage implements OnInit {
   ngOnInit() { }
 
   public cadastrar() {
-    console.log(this.formGroup.value);
-    this.formGroup.reset();
-    this.nomePessoaContrada = null;
-    this.nomeCategoriaContaBancaria = null;
-    this.configuracaoUtilityService.apresentarToastSucessoMensagemPosition("Conta Bancária Cadastrada com Sucesso!", "top");
+    if (this.formGroup.valid) {
+      console.log(this.formGroup.value);
+      this.formGroup.reset();
+      this.nomePessoaContrada = null;
+      this.nomeCategoriaContaBancaria = null;
+      this.configuracaoUtilityService.apresentarToastSucessoMensagemPosition("Conta Bancária Cadastrada com Sucesso!", "top");
+    }
+  }
+
+  public exibirSaldoInicial() {
+    this.saldoInicial = Number(this.formGroup.controls['saldoInicial'].value) != 0 ? 
+      Number(this.formGroup.controls['saldoInicial'].value) :
+      Number(0);
+  }
+
+  public onChangeMaxLength(event: any, propriedade: string, tamanhoMaximo: number) {
+    let valor;
+    if (event.target.value.toString().length > tamanhoMaximo) {
+      valor = event.target.value.slice(0, tamanhoMaximo);
+      this.formGroup.controls[propriedade].setValue(valor);
+    }
   }
 
   public habilitarCampo() : void {
@@ -77,7 +95,6 @@ export class ContaBancariaCadastrarPage implements OnInit {
       if (parameter.role !== 'backdrop') {
         this.formGroup.controls["categoriaContaBancaria"].setValue(parameter.data);
         this.nomeCategoriaContaBancaria = parameter.data.descricao;
-        console.log(parameter.data.descricao);
       }
     });
     return await modal.present();

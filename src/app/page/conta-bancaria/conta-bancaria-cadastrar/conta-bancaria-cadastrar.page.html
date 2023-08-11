@@ -16,7 +16,7 @@
     <div [ngStyle]="{'background': cor}" class="saldo">
       <ion-label class="ion-text-center">
         Saldo Atual da Conta
-        <p>R$ 100.000,00</p>
+        <p>R$ {{ saldoInicial === 0 ? "00,00" : saldoInicial }}</p>
       </ion-label>
     </div>
   
@@ -87,7 +87,7 @@
           </div>
     
           <div class="campo">
-            <ion-input type="number" formControlName="numeroContaBancaria" placeholder="Número da Conta Bancária" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-input type="number" formControlName="numeroContaBancaria" (ionInput)="onChangeMaxLength($event, 'numeroContaBancaria', 10)" placeholder="Número da Conta Bancária" [ngStyle]="{'color': cor}"></ion-input>
           </div>
     
           <div class="acao"></div>
@@ -103,7 +103,7 @@
           </div>
     
           <div class="campo">
-            <ion-input type="number" formControlName="agenciaContaBancaria" placeholder="Número da Agência" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-input type="number" formControlName="agenciaContaBancaria" (ionInput)="onChangeMaxLength($event, 'agenciaContaBancaria', 10)" placeholder="Número da Agência" [ngStyle]="{'color': cor}"></ion-input>
           </div>
     
           <div class="acao"></div>
@@ -119,7 +119,7 @@
           </div>
     
           <div class="campo">
-            <ion-input type="number" formControlName="saldoInicial" placeholder="Saldo Inicial" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-input type="number" formControlName="saldoInicial" (ionInput)="onChangeMaxLength($event, 'saldoInicial', 10)" (ionInput)="exibirSaldoInicial()" placeholder="Saldo Inicial" [ngStyle]="{'color': cor}"></ion-input>
           </div>
     
           <div class="acao"></div>
@@ -166,7 +166,7 @@
       <ion-button fill="outline" color="{{cor}}" *ngIf="!bolHabilitarCampo" (click)="habilitarCampo()" [ngStyle]="{'color': cor}">MAIS</ion-button>
 
     <ion-fab vertical="botton" horizontal="center">
-      <ion-fab-button (click)="cadastrar()" [ngStyle]="{'--background': cor}">
+      <ion-fab-button [disabled]="!formGroup.valid" (click)="cadastrar()" [ngStyle]="{'--background': cor}">
         <ion-icon name="checkmark"></ion-icon>
       </ion-fab-button>
     </ion-fab>
