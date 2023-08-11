@@ -55,10 +55,8 @@ export class ContaBancariaCadastrarPage implements OnInit {
   }
 
   public onChangeMaxLength(event: any, propriedade: string, tamanhoMaximo: number) {
-    let valor;
     if (event.target.value.toString().length > tamanhoMaximo) {
-      valor = event.target.value.slice(0, tamanhoMaximo);
-      this.formGroup.controls[propriedade].setValue(valor);
+      this.formGroup.controls[propriedade].setValue(event.target.value.slice(0, tamanhoMaximo));
     }
   }
 
