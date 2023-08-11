@@ -11,6 +11,8 @@ export class CategoriaContaBancariaPesquisarModalPage implements OnInit {
 
   public tipoContaBancariaList: any[] = [];
 
+  public isLoading: boolean = false;
+
   constructor(
     private tipoContaBancariaService: TipoContaBancariaService,
     private configuracaoUtilityService: ConfiguracaoUtilityService,
@@ -21,8 +23,10 @@ export class CategoriaContaBancariaPesquisarModalPage implements OnInit {
   }
 
   public recuperarTipoContaBancaria() {
+    this.isLoading = true;
     this.tipoContaBancariaService.searchAll().subscribe( response => {
       this.tipoContaBancariaList = response;
+      this.isLoading = false;
     });
   }
 

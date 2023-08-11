@@ -6,8 +6,12 @@
 
 <ion-content>
 
+  <div *ngIf="isLoading" class="ion-text-center spinner">
+    <ion-spinner name="circles" *ngIf="isLoading"></ion-spinner>
+  </div>
+
   <ion-item *ngFor="let item of tipoContaBancariaList">
-    <ion-label (click)="selecionarTipoContaBancaria(item)">{{ item.descricao }}</ion-label>
+    <ion-label *ngIf="!isLoading" (click)="selecionarTipoContaBancaria(item)">{{ item.descricao }}</ion-label>
   </ion-item>
 
 </ion-content>
