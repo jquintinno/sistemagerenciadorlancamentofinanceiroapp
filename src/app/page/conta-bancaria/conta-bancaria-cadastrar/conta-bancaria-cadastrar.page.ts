@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ModalController } from '@ionic/angular';
 import { CategoriaContaBancariaPesquisarModalPage } from 'src/app/component/modal/categoria-conta-bancaria-pesquisar-modal/categoria-conta-bancaria-pesquisar-modal.page';
 import { PessoaPesquisarModalPage } from 'src/app/component/modal/pessoa-pesquisar-modal/pessoa-pesquisar-modal.page';
+import { ContaBancariaService } from 'src/app/service/conta-bancaria.service';
 import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility.service';
 
 @Component({
@@ -33,19 +34,32 @@ export class ContaBancariaCadastrarPage implements OnInit {
 
   constructor(
     public configuracaoUtilityService: ConfiguracaoUtilityService,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private contaBancariaService: ContaBancariaService
   ) { }
 
   ngOnInit() { }
 
   public cadastrar() {
     if (this.formGroup.valid) {
-      console.log(this.formGroup.value);
+
+      const contaBancariaModel = {
+        pessoaContaBancaria: this.formGroup.controls['pessoaContrada'].value,
+        tipoContaBancaria: this.formGroup.controls['categoriaContaBancaria'].value,
+        numero: this.formGroup.controls['numeroContaBancaria'].value,
+        numero_agencia: this.formGroup.controls['agenciaContaBancaria'].value,
+        saldoInicial: this.formGroup.controls['saldoInicial'].value,
+        corContaBancaria: this.formGroup.controls['corContaBancaria'].value,
+      }
+
+      this.contaBancariaService.cadastrarContaBancaria(contaBancariaModel).subscribe( response => {
       this.formGroup.reset();
       this.nomePessoaContrada = null;
       this.nomeCategoriaContaBancaria = null;
       this.saldoInicial = 0;
       this.configuracaoUtilityService.apresentarToastSucessoMensagemPosition("Conta Bancária Cadastrada com Sucesso!", "top");
+      this.configuracaoUtilityService.redirecionarTelaContaBancaria();
+      });
     }
   }
 

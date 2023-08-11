@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TipoContaBancariaService } from 'src/app/service/tipo-conta-bancaria.service';
+import { ContaBancariaService } from 'src/app/service/conta-bancaria.service';
 import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class CategoriaContaBancariaPesquisarModalPage implements OnInit {
   public isLoading: boolean = false;
 
   constructor(
-    private tipoContaBancariaService: TipoContaBancariaService,
+    private contaBancariaService: ContaBancariaService,
     private configuracaoUtilityService: ConfiguracaoUtilityService,
   ) { }
 
@@ -24,7 +24,7 @@ export class CategoriaContaBancariaPesquisarModalPage implements OnInit {
 
   public recuperarTipoContaBancaria() {
     this.isLoading = true;
-    this.tipoContaBancariaService.searchAll().subscribe( response => {
+    this.contaBancariaService.searchAllTipoContaBancaria().subscribe( response => {
       this.tipoContaBancariaList = response;
       this.isLoading = false;
     });

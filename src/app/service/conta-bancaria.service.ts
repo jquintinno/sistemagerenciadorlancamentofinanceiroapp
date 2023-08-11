@@ -6,7 +6,7 @@ import { environment } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
-export class TipoContaBancariaService {
+export class ContaBancariaService {
 
   private ENDPOINT: string = "/conta-bancaria";
 
@@ -14,8 +14,12 @@ export class TipoContaBancariaService {
     private httpClient: HttpClient
   ) { }
 
-  public searchAll() : Observable<any[]> {
+  public searchAllTipoContaBancaria() : Observable<any[]> {
     return this.httpClient.get<any[]>(environment.url_api.concat(this.ENDPOINT).concat("/tipo"));
+  }
+
+  public cadastrarContaBancaria(contaBancariaModel: any) : Observable<any> {
+    return this.httpClient.post<any>(environment.url_api.concat(this.ENDPOINT), contaBancariaModel);
   }
 
 }
