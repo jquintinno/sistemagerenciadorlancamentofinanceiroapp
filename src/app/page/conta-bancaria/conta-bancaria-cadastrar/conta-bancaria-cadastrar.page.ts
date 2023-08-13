@@ -24,10 +24,10 @@ export class ContaBancariaCadastrarPage implements OnInit {
   public saldoInicial: number = 0;
 
   public formGroup = new FormGroup({
-    pessoaContrada: new FormControl("", [ Validators.required ]),
-    categoriaContaBancaria: new FormControl("", [ Validators.required ]),
+    codigoPessoaContrada: new FormControl("", [ Validators.required ]),
+    codigoCategoriaContaBancaria: new FormControl("", [ Validators.required ]),
     numeroContaBancaria: new FormControl("", [ Validators.required ]),
-    agenciaContaBancaria: new FormControl("", [ Validators.required ]),
+    numeroAgenciaContaBancaria: new FormControl("", [ Validators.required ]),
     saldoInicial: new FormControl("", [ Validators.required ]),
     corContaBancaria: new FormControl(""),
   });
@@ -42,16 +42,15 @@ export class ContaBancariaCadastrarPage implements OnInit {
 
   public cadastrar() {
     if (this.formGroup.valid) {
-
       const contaBancariaModel = {
-        pessoaContaBancaria: this.formGroup.controls['pessoaContrada'].value,
-        tipoContaBancaria: this.formGroup.controls['categoriaContaBancaria'].value,
-        numero: this.formGroup.controls['numeroContaBancaria'].value,
-        numero_agencia: this.formGroup.controls['agenciaContaBancaria'].value,
+        codigoPessoaContrada: this.formGroup.controls['codigoPessoaContrada'].value,
+        codigoCategoriaContaBancaria: this.formGroup.controls['codigoCategoriaContaBancaria'].value,
+        numeroContaBancaria: this.formGroup.controls['numeroContaBancaria'].value,
+        numeroAgenciaContaBancaria: this.formGroup.controls['numeroAgenciaContaBancaria'].value,
         saldoInicial: this.formGroup.controls['saldoInicial'].value,
-        corContaBancaria: this.formGroup.controls['corContaBancaria'].value,
+        // corContaBancaria: this.formGroup.controls['corContaBancaria'].value,
+        corContaBancaria: "red",
       }
-
       this.contaBancariaService.cadastrarContaBancaria(contaBancariaModel).subscribe( response => {
       this.formGroup.reset();
       this.nomePessoaContrada = null;
@@ -91,7 +90,7 @@ export class ContaBancariaCadastrarPage implements OnInit {
     });
     modal.onDidDismiss().then( (parameter) => {
       if (parameter.role !== 'backdrop') {
-        this.formGroup.controls["pessoaContrada"].setValue(parameter.data);
+        this.formGroup.controls["codigoPessoaContrada"].setValue(parameter.data.codigo);
         this.nomePessoaContrada = parameter.data.nome;
       }
     });
@@ -106,7 +105,7 @@ export class ContaBancariaCadastrarPage implements OnInit {
     });
     modal.onDidDismiss().then( (parameter) => {
       if (parameter.role !== 'backdrop') {
-        this.formGroup.controls["categoriaContaBancaria"].setValue(parameter.data);
+        this.formGroup.controls["codigoCategoriaContaBancaria"].setValue(parameter.data.codigo);
         this.nomeCategoriaContaBancaria = parameter.data.descricao;
       }
     });

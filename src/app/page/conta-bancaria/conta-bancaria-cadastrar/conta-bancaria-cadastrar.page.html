@@ -106,7 +106,7 @@
     
           <div class="campo">
             <ion-item lines="none">
-              <ion-input type="number" formControlName="agenciaContaBancaria" (ionInput)="onChangeMaxLength($event, 'agenciaContaBancaria', 10)" placeholder="Número da Agência" [ngStyle]="{'color': cor}"></ion-input>
+              <ion-input type="number" formControlName="numeroAgenciaContaBancaria" (ionInput)="onChangeMaxLength($event, 'agenciaContaBancaria', 10)" placeholder="Número da Agência" [ngStyle]="{'color': cor}"></ion-input>
             </ion-item>
           </div>
     
@@ -172,7 +172,7 @@
       <ion-button fill="outline" color="{{cor}}" *ngIf="!bolHabilitarCampo" (click)="habilitarCampo()" [ngStyle]="{'color': cor}">MAIS</ion-button>
 
     <ion-fab vertical="botton" horizontal="center">
-      <ion-fab-button [disabled]="!formGroup.valid" (click)="cadastrar()" [ngStyle]="{'--background': cor}">
+      <ion-fab-button  (click)="cadastrar()" [ngStyle]="{'--background': cor}">
         <ion-icon name="checkmark"></ion-icon>
       </ion-fab-button>
     </ion-fab>
