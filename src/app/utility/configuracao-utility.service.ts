@@ -55,12 +55,12 @@ export class ConfiguracaoUtilityService {
     return await toast.present();
   }
 
-  public async apresentarToastSucessoMensagemPosition(mensagem: String, position: string) {
+  public async apresentarToastSucessoMensagemPosition(mensagem: String, position: any) {
     const toast = await this.toastController.create({
       message: mensagem.toString(),
       duration: 2000,
       color: "success",
-      position: "top"
+      position: position
     });
     return await toast.present();
   }

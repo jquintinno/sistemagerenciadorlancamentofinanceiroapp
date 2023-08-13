@@ -87,8 +87,14 @@
           </div>
     
           <div class="campo">
-            <ion-item lines="none">
-              <ion-input type="number" formControlName="numeroContaBancaria" (ionInput)="onChangeMaxLength($event, 'numeroContaBancaria', 10)" placeholder="Número da Conta Bancária" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-item lines="none"
+              [ngClass]="{'error': formGroup.controls?.numeroContaBancaria.touched && formGroup.controls?.numeroContaBancaria.invalid }">
+              <ion-input 
+                type="number" 
+                formControlName="numeroContaBancaria" 
+                (ionInput)="onChangeMaxLength($event, 'numeroContaBancaria', 10)" 
+                placeholder="Número da Conta Bancária" 
+                [ngStyle]="{'color': cor}"></ion-input>
             </ion-item>
           </div>
     
@@ -105,8 +111,14 @@
           </div>
     
           <div class="campo">
-            <ion-item lines="none">
-              <ion-input type="number" formControlName="numeroAgenciaContaBancaria" (ionInput)="onChangeMaxLength($event, 'agenciaContaBancaria', 10)" placeholder="Número da Agência" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-item lines="none" 
+              [ngClass]="{'error': formGroup.controls?.numeroAgenciaContaBancaria.touched && formGroup.controls?.numeroAgenciaContaBancaria.invalid }">
+              <ion-input 
+                type="number" 
+                formControlName="numeroAgenciaContaBancaria" 
+                (ionInput)="onChangeMaxLength($event, 'agenciaContaBancaria', 10)" 
+                placeholder="Número da Agência" 
+                [ngStyle]="{'color': cor}"></ion-input>
             </ion-item>
           </div>
     
@@ -123,11 +135,18 @@
           </div>
     
           <div class="campo">
-            <ion-item lines="none">
-              <ion-input type="number" formControlName="saldoInicial" (ionInput)="onChangeMaxLength($event, 'saldoInicial', 10)" (ionInput)="exibirSaldoInicial()" placeholder="Saldo Inicial" [ngStyle]="{'color': cor}"></ion-input>
+            <ion-item lines="none" 
+              [ngClass]="{'error': formGroup.controls?.saldoInicial.touched && formGroup.controls?.saldoInicial.invalid }">
+              <ion-input 
+                type="number" 
+                formControlName="saldoInicial" 
+                (ionInput)="onChangeMaxLength($event, 'saldoInicial', 10)" 
+                (ionInput)="exibirSaldoInicial()" 
+                placeholder="Saldo Inicial" 
+                [ngStyle]="{'color': cor}"></ion-input>
             </ion-item>
           </div>
-    
+
           <div class="acao"></div>
     
         </div>
@@ -172,7 +191,7 @@
       <ion-button fill="outline" color="{{cor}}" *ngIf="!bolHabilitarCampo" (click)="habilitarCampo()" [ngStyle]="{'color': cor}">MAIS</ion-button>
 
     <ion-fab vertical="botton" horizontal="center">
-      <ion-fab-button  (click)="cadastrar()" [ngStyle]="{'--background': cor}">
+      <ion-fab-button [disabled]="formGroup.invalid" (click)="cadastrar()" [ngStyle]="{'--background': cor}">
         <ion-icon name="checkmark"></ion-icon>
       </ion-fab-button>
     </ion-fab>

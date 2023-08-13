@@ -28,7 +28,7 @@ export class ContaBancariaCadastrarPage implements OnInit {
     codigoCategoriaContaBancaria: new FormControl("", [ Validators.required ]),
     numeroContaBancaria: new FormControl("", [ Validators.required ]),
     numeroAgenciaContaBancaria: new FormControl("", [ Validators.required ]),
-    saldoInicial: new FormControl("", [ Validators.required ]),
+    saldoInicial: new FormControl("", [ Validators.required, Validators.minLength(1) ]),
     corContaBancaria: new FormControl(""),
   });
 
@@ -56,7 +56,7 @@ export class ContaBancariaCadastrarPage implements OnInit {
       this.nomePessoaContrada = null;
       this.nomeCategoriaContaBancaria = null;
       this.saldoInicial = 0;
-      this.configuracaoUtilityService.apresentarToastSucessoMensagemPosition("Conta Bancária Cadastrada com Sucesso!", "top");
+      this.configuracaoUtilityService.apresentarToastSucessoMensagemPosition("Conta Bancária Cadastrada com Sucesso!", "bottom");
       this.configuracaoUtilityService.redirecionarTelaContaBancaria();
       });
     }

@@ -35,7 +35,6 @@
         height: 70px;
         padding: 14px;
         .icone {
-            // border: red 2px dashed;
             width: 10%;
             text-align: left;
             ion-icon {
@@ -62,7 +61,7 @@
         }
     }
     .row:hover {
-        background: rgba(244, 244, 244, 0.252);
+        // background: rgba(244, 244, 244, 0.252);
         cursor: pointer;
     }
 }
@@ -81,14 +80,14 @@ ion-fab {
     }
 }
 
-ion-input {
+ion-input[placeholder] {
     --placeholder-color: #666666;
 }
 
 ion-button {
     display: flex;
     justify-content: center;
-    height: 40px;
+    height: 50px;
 }
 
 .centralizador {
@@ -96,4 +95,9 @@ ion-button {
         padding: 8px;
         margin: 2px;
     }
+}
+
+.error {
+    border-bottom: red solid 2px;
+    border-radius: 2px;
 }
