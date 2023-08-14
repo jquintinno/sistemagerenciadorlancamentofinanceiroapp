@@ -9,13 +9,13 @@ import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility
 export class ContaBancariaPage implements OnInit {
 
   constructor(
-    private configuracaoUtilityService: ConfiguracaoUtilityService
+    public configuracaoUtilityService: ConfiguracaoUtilityService
   ) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.configuracaoUtilityService.redirecionarTelaContaBancariaCadastrar();
-    }, 1000);
+    // setTimeout(() => {
+    //   this.configuracaoUtilityService.redirecionarTelaContaBancariaCadastrar();
+    // }, 1000);
   }
 
 }

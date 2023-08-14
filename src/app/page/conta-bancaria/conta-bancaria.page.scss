@@ -1,0 +1,44 @@
+.background {
+    --background: #7c4dff;
+    color: white;
+}
+
+ion-fab-button {
+    --background: #7c4dff;
+}
+
+.barra {
+    background: #7c4dff;
+    height: 80px;
+}
+
+.containerA {
+    height: 80px;
+    background: white;
+    margin-top: -40px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding: 20px;
+    #conta-bancaria {
+        // border: red 1px dashed;
+        margin: 6px;
+        padding: 12px;
+        background: #f2f3f6;
+        border-radius: 10px;
+        .informacao {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            ion-label {
+                p {
+                 margin-top: 6px;   
+                }
+            }
+            ion-text {
+                font-size: 18px;
+                font-weight: bold;
+            }
+        }
+    }
+}
