@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'conta-bancaria',
+    redirectTo: 'lancamento-financeiro',
     pathMatch: 'full'
   },
   {
@@ -26,6 +26,14 @@ const routes: Routes = [
   {
     path: 'categoria-conta-bancaria-pesquisar-modal',
     loadChildren: () => import('./component/modal/categoria-conta-bancaria-pesquisar-modal/categoria-conta-bancaria-pesquisar-modal.module').then( m => m.CategoriaContaBancariaPesquisarModalPageModule)
+  },
+  {
+    path: 'lancamento-financeiro-cadastrar',
+    loadChildren: () => import('./page/lancamento-financeiro/lancamento-financeiro-cadastrar/lancamento-financeiro-cadastrar.module').then( m => m.LancamentoFinanceiroCadastrarPageModule)
+  },
+  {
+    path: 'lancamento-financeiro',
+    loadChildren: () => import('./page/lancamento-financeiro/lancamento-financeiro.module').then( m => m.LancamentoFinanceiroPageModule)
   },
 ];
 

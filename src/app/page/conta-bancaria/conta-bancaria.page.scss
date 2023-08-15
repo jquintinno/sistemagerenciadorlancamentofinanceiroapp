@@ -20,7 +20,6 @@ ion-fab-button {
     border-top-right-radius: 30px;
     padding: 20px;
     #conta-bancaria {
-        // border: red 1px dashed;
         margin: 6px;
         padding: 12px;
         background: #f2f3f6;
@@ -31,14 +30,22 @@ ion-fab-button {
             justify-content: space-between;
             align-items: center;
             ion-label {
+                // border: red 1px dashed;
+                padding: 10px;
                 p {
                  margin-top: 6px;   
                 }
+                strong {
+                    font-size: 14px;
+                }
             }
             ion-text {
-                font-size: 18px;
+                font-size: 17px;
                 font-weight: bold;
             }
         }
+    }
+    #conta-bancaria:hover {
+        cursor: pointer;
     }
 }

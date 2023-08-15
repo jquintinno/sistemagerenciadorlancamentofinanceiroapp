@@ -2,7 +2,7 @@
   <ion-toolbar class="background">
 
     <ion-buttons slot="start">
-      <ion-button>
+      <ion-button (click)="configuracaoUtilityService.redirecionarTelaCadastroLancamentoFinanceiro()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -20,23 +20,13 @@
 
   <div class="containerA">
 
-    <section id="conta-bancaria">
+    <section id="conta-bancaria" *ngFor="let item of contaBancariaList">
       <div class="informacao">
         <ion-label>
-          <strong>Banco do Brasil S.A.</strong>
-          <p>0854-5 / 71.012.00-1</p>
+          <strong>{{ item.pessoaContaBancaria.nome }}</strong>
+          <p>{{ item.numeroAgenciaContaBancaria }} / {{ item.numeroContaBancaria }}</p>
         </ion-label>
-        <ion-text>R$ 20.000,00</ion-text>
-      </div>
-    </section>
-
-    <section id="conta-bancaria">
-      <div class="informacao">
-        <ion-label>
-          <strong>Banco do Brasil S.A.</strong>
-          <p>0854-5 / 71.012.00-1</p>
-        </ion-label>
-        <ion-text>R$ 20.000,00</ion-text>
+        <ion-text>R$ {{ item.saldoInicial }}</ion-text>
       </div>
     </section>
 

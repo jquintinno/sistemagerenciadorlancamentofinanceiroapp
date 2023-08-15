@@ -19,8 +19,11 @@ export class ContaBancariaService {
   }
 
   public cadastrarContaBancaria(contaBancariaModel: any) : Observable<any> {
-    console.log(contaBancariaModel);
     return this.httpClient.post<any>(environment.url_api.concat(this.ENDPOINT), contaBancariaModel);
+  }
+
+  public recuperarContaBancaria() : Observable<any[]> {
+    return this.httpClient.get<any[]>(environment.url_api.concat(this.ENDPOINT));
   }
 
 }

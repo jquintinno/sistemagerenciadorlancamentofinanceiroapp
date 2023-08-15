@@ -37,6 +37,14 @@ export class ConfiguracaoUtilityService {
     this.router.navigate(['/pessoa-pesquisar-modal']);
   }
 
+  public redirecionarTelaCadastroLancamentoFinanceiro() {
+    this.router.navigate(['/lancamento-financeiro']);
+  }
+
+  public redirecionarTelaLancamentoFinanceiroCadastrar() {
+    this.router.navigate(['/lancamento-financeiro-cadastrar']);
+  }
+
   public async apresentarToastSucessoMensagem(mensagem: String) {
     const toast = await this.toastController.create({
       message: mensagem.toString(),
