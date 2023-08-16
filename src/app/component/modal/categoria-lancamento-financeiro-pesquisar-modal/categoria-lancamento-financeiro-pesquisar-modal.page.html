@@ -1,0 +1,17 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>
+      <b>Categoria de Lançamento Financeiro</b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list lines="none">
+    <ion-item detail="true" *ngFor="let item of categoriaLancamentoFinanceiroList" (click)="selecionar(item)">
+      <ion-label>{{ item.nome }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

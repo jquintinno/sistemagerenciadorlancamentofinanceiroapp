@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController, ToastController } from '@ionic/angular';
+import { FormaPagamentoCadastrarModalPage } from '../component/modal/forma-pagamento-cadastrar-modal/forma-pagamento-cadastrar-modal.page';
 
 @Injectable({
   providedIn: 'root'
@@ -83,6 +84,15 @@ export class ConfiguracaoUtilityService {
 
   public async fecharModalParametro(parametro: any) {
     return await this.modalController.dismiss(parametro);
+  }
+
+  public async apresentarModalFormaPagamento() { 
+    const modal = await this.modalController.create({
+      component: FormaPagamentoCadastrarModalPage,
+      breakpoints: [0, 0.25, 0.50, 0.60, 0.75, 0.85, 0.90, 1],
+      initialBreakpoint: 0.75
+    });
+    return modal.present();
   }
 
 }

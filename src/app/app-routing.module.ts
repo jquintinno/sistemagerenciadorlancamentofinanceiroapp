@@ -35,6 +35,18 @@ const routes: Routes = [
     path: 'lancamento-financeiro',
     loadChildren: () => import('./page/lancamento-financeiro/lancamento-financeiro.module').then( m => m.LancamentoFinanceiroPageModule)
   },
+  {
+    path: 'forma-pagamento-cadastrar-modal',
+    loadChildren: () => import('./component/modal/forma-pagamento-cadastrar-modal/forma-pagamento-cadastrar-modal.module').then( m => m.FormaPagamentoCadastrarModalPageModule)
+  },
+  {
+    path: 'categoria-lancamento-financeiro-pesquisar-modal',
+    loadChildren: () => import('./component/modal/categoria-lancamento-financeiro-pesquisar-modal/categoria-lancamento-financeiro-pesquisar-modal.module').then( m => m.CategoriaLancamentoFinanceiroPesquisarModalPageModule)
+  },
+  {
+    path: 'produto-servico-pesquisar-modal',
+    loadChildren: () => import('./component/modal/produto-servico-pesquisar-modal/produto-servico-pesquisar-modal.module').then( m => m.ProdutoServicoPesquisarModalPageModule)
+  },
 ];
 
 @NgModule({
