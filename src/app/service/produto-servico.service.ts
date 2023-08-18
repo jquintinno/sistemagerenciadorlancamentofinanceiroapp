@@ -23,4 +23,9 @@ export class ProdutoServicoService {
     return this.httpClient.get<any[]>(environment.url_api.concat(this.ENDPOINT));
   }
 
+  public recuperarProdutoServico(nomeProdutoServico: string) : Observable<any[]> {
+    const endpoint = environment.url_api.concat(this.ENDPOINT).concat("/").concat("filtro").concat("/").concat(nomeProdutoServico);
+    return this.httpClient.get<any[]>(endpoint);
+  }
+
 }

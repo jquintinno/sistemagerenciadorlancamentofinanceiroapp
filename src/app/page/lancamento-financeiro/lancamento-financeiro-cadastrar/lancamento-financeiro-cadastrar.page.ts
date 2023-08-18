@@ -57,7 +57,7 @@ export class LancamentoFinanceiroCadastrarPage implements OnInit {
     const modal = await this.modalController.create({
       component: ProdutoServicoPesquisarModalPage,
       breakpoints: [0, 0.25, 0.50, 0.60, 0.75, 0.85, 0.90, 1],
-      initialBreakpoint: 0.60
+      initialBreakpoint: 0.50
     });
     return modal.present();
   }

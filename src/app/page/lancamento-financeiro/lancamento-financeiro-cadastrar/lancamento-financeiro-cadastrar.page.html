@@ -45,6 +45,11 @@
         <ion-label *ngIf="nomeCategoriaLancamentoFinanceiro != null" style="font-weight: bold; color: blue;">{{ nomeCategoriaLancamentoFinanceiro }}</ion-label>
       </ion-item>
 
+      <ion-item detail="true" (click)="apresentarModalProdutoServico()">
+        <ion-icon name="bag-add-outline"></ion-icon>
+        <ion-label>Produto ou Serviço</ion-label>
+      </ion-item>
+
       <ion-item detail="true">
         <ion-icon name="newspaper-outline"></ion-icon>
         <ion-label>Parcelamento Financeiro</ion-label>
@@ -56,11 +61,6 @@
           <ion-input type="number" label="Quantidade de Parcelas" labelPlacement="floating" placeholder="Quantidade" errorText="Campo de Preenchimento Obrigatório"></ion-input>
         </div>
       </ion-item> -->
-
-      <ion-item detail="true" (click)="apresentarModalProdutoServico()">
-        <ion-icon name="bag-add-outline"></ion-icon>
-        <ion-label>Produto ou Serviço</ion-label>
-      </ion-item>
 
       <!-- <ion-item detail="false">
         <div class="campos">
