@@ -9,7 +9,7 @@
       <ion-button *ngIf="nomeProdutoServico" (click)="limparCampos()">
         <ion-icon name="close-outline"></ion-icon>
       </ion-button>
-      <ion-button>
+      <ion-button (click)="salvarProdutoServico()">
         <ion-icon name="save-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -19,46 +19,39 @@
 
 <ion-content>
 
-  <ion-list>
+  <form [formGroup]="formGroup">
 
-    <ion-item *ngIf="!nomeProdutoServico">
-        <!-- <ion-input 
-          type="text"
-          label="Nome do Produto ou Serviço" 
-          placeholder="Nome do Produto ou Serviço"
-          labelPlacement="floating" 
-          autocomplete="off"
-          errorText="Campo de Preenchimento Obrigatório"
-          style="color: #737373;"></ion-input> -->
-      <ion-input
-        id="resultado-produto-servico"
-        type="text" 
-        (ionInput)="verificarProdutoServico($event)"
-        placeholder="Nome do Produto ou Serviço"
-        style="color: #737373;"></ion-input>
-    </ion-item>
+    <ion-list>
 
-    <ion-list lines="none">
-      <ion-item *ngFor="let item of produtoServicoList" (click)="selecionarProdutoServico(item)">
-        <ion-label>{{ item.nome }}</ion-label>
+      <ion-item *ngIf="!nomeProdutoServico">
+        <ion-input id="resultado-produto-servico" type="text" 
+          formControlName="produtoServicoModel" (ionInput)="recuperarProdutoServico($event)"
+          placeholder="Nome do Produto ou Serviço" style="color: #737373;"></ion-input>
       </ion-item>
+
+      <ion-list lines="none">
+        <ion-item *ngFor="let item of produtoServicoList" (click)="selecionarProdutoServico(item)">
+          <ion-label>{{ item.nome }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-item *ngIf="nomeProdutoServico">
+        <ion-label style="color: blue;">{{ nomeProdutoServico }}</ion-label>
+      </ion-item>
+
+      <ion-item lines="none" *ngIf="!isHabilitarCampoDescricao">
+        <ion-input type="text" formControlName="descricaoProdutoServico" 
+          label="Descrição do Produto ou Serviço" placeholder="Descrição" labelPlacement="floating"
+          autocomplete="off" errorText="Campo de Preenchimento Obrigatório" style="color: #737373;"></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-input type="number" formControlName="valorProdutoServico" label="Valor do Produto ou Serviço" placeholder="R$ 00,00" labelPlacement="floating"
+          autocomplete="off" errorText="Campo de Preenchimento Obrigatório" style="color: #737373;"></ion-input>
+      </ion-item>
+
     </ion-list>
 
-    <ion-item *ngIf="nomeProdutoServico">
-      <ion-label style="color: blue;">{{ nomeProdutoServico }}</ion-label>
-    </ion-item>
-
-    <ion-item lines="none">
-      <ion-input 
-        type="number" 
-        label="Valor do Produto ou Serviço" 
-        placeholder="R$ 00,00"
-        labelPlacement="floating" 
-        autocomplete="off"
-        errorText="Campo de Preenchimento Obrigatório"
-        style="color: #737373;"></ion-input>
-    </ion-item>
-
-  </ion-list>
+  </form>
 
 </ion-content>

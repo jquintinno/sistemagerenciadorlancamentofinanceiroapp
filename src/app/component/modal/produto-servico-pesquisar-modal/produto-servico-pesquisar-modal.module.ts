@@ -1,11 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-
 import { ProdutoServicoPesquisarModalPageRoutingModule } from './produto-servico-pesquisar-modal-routing.module';
-
 import { ProdutoServicoPesquisarModalPage } from './produto-servico-pesquisar-modal.page';
 
 @NgModule({
@@ -13,7 +10,8 @@ import { ProdutoServicoPesquisarModalPage } from './produto-servico-pesquisar-mo
     CommonModule,
     FormsModule,
     IonicModule,
-    ProdutoServicoPesquisarModalPageRoutingModule
+    ProdutoServicoPesquisarModalPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [ProdutoServicoPesquisarModalPage]
 })
