@@ -14,6 +14,7 @@ export class LancamentoFinanceiroCadastrarPage implements OnInit {
 
   public nomePessoaLancamentoFinanceiro: string;
   public nomeCategoriaLancamentoFinanceiro: string;
+  public nomeProdutoServico: string;
 
   constructor(
     public configuracaoUtilityService: ConfiguracaoUtilityService,
@@ -58,6 +59,13 @@ export class LancamentoFinanceiroCadastrarPage implements OnInit {
       component: ProdutoServicoPesquisarModalPage,
       breakpoints: [0, 0.25, 0.50, 0.60, 0.75, 0.85, 0.90, 1],
       initialBreakpoint: 0.50
+    });
+    modal.onDidDismiss().then( (parameter) => {
+      if (parameter.role !== 'backdrop') {
+        if (parameter instanceof Object) {
+          this.nomeProdutoServico = parameter.data.nome;
+        }
+      }
     });
     return modal.present();
   }

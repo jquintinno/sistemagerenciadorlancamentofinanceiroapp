@@ -57,9 +57,7 @@ export class ProdutoServicoPesquisarModalPage implements OnInit {
     };
 
     if (object.produtoServicoModel instanceof Object) {
-      produtoServicoDomain = {
-        codigo: object.produtoServicoModel.codigo,
-      }
+      produtoServicoDomain = object.produtoServicoModel;
     } else {
       produtoServicoDomain = {
         nome: this.formGroup.controls['produtoServicoModel'].value,
@@ -68,11 +66,13 @@ export class ProdutoServicoPesquisarModalPage implements OnInit {
       }
     }
 
-    this.produtoServicoService.createOne(produtoServicoDomain).subscribe( response => {
-      console.log(response);
-    }, error => {
-      console.log(error);
-    });
+    this.configuracaoUtilityService.fecharModalParametro(produtoServicoDomain);
+
+    // this.produtoServicoService.createOne(produtoServicoDomain).subscribe( response => {
+    //   console.log(response);
+    // }, error => {
+    //   console.log(error);
+    // });
 
   }
 

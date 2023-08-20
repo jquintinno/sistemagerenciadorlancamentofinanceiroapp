@@ -47,7 +47,8 @@
 
       <ion-item detail="true" (click)="apresentarModalProdutoServico()">
         <ion-icon name="bag-add-outline"></ion-icon>
-        <ion-label>Produto ou Serviço</ion-label>
+        <ion-label *ngIf="nomeProdutoServico == null">Produto ou Serviço</ion-label>
+        <ion-label *ngIf="nomeProdutoServico != null" style="font-weight: bold; color: blue;"> {{ nomeProdutoServico }} </ion-label>
       </ion-item>
 
       <ion-item detail="true">
