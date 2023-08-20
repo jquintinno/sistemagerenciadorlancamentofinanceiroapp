@@ -62,9 +62,7 @@ export class LancamentoFinanceiroCadastrarPage implements OnInit {
     });
     modal.onDidDismiss().then( (parameter) => {
       if (parameter.role !== 'backdrop') {
-        if (parameter instanceof Object) {
-          this.nomeProdutoServico = parameter.data.nome;
-        }
+        this.nomeProdutoServico = parameter.data.nome;
       }
     });
     return modal.present();
