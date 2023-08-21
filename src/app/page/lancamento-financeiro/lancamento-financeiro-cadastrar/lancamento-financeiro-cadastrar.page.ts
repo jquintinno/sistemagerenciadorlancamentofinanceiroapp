@@ -54,7 +54,7 @@ export class LancamentoFinanceiroCadastrarPage implements OnInit {
     return modal.present();
   }
 
-  public async apresentarModalProdutoServico() { 
+  public async apresentarModalProdutoServico() {
     const modal = await this.modalController.create({
       component: ProdutoServicoPesquisarModalPage,
       breakpoints: [0, 0.25, 0.50, 0.60, 0.75, 0.85, 0.90, 1],
@@ -64,6 +64,8 @@ export class LancamentoFinanceiroCadastrarPage implements OnInit {
       if (parameter.role !== 'backdrop') {
         this.nomeProdutoServico = parameter.data.nome;
       }
+      console.log(parameter);
+      
     });
     return modal.present();
   }

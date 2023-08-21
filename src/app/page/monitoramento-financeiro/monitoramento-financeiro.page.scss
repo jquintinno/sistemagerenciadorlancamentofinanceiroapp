@@ -1,0 +1,116 @@
+ion-header {
+    ion-toolbar {
+        --background: #6236ff;
+    }
+}
+
+ion-content {
+    --background: #ededf5;
+
+    #sectionA {
+        background: #6236ff;
+        height: 110px;
+
+        .card {
+            background: white;
+            border: white 1px solid;
+            height: 230px;
+            width: 94%;
+            margin: 0 auto;
+            border-radius: 20px;
+
+            ion-label {
+                text-align: center;
+
+                b {
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-size: 38px;
+                    color: black;
+                    font-weight: bold;
+                    margin-bottom: 30px;
+                }
+            }
+
+            .divisor {
+                border: solid 1px rgb(222, 222, 222);
+                width: 74%;
+                margin: 0 auto;
+                border-radius: 10px;
+            }
+
+            .actions {
+                padding: 10px;
+                margin-top: 20px;
+
+                ion-buttons {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .item {
+                        display: flex; 
+                        flex-direction: column;
+                        ion-button {
+                            color: white;
+                            border-radius: 10px;
+                            padding: 10px;
+                            cursor: pointer;
+                            width: 100px;
+                        }
+                        ion-text {
+                            margin-top: 10px;
+                            text-align: center;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #sectionB {
+        margin-top: 130px;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        .box {
+            background: white;
+            width: 46%;
+            height: 76px;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            ion-label {
+                font-size: 14px;
+                p {
+                    margin-top: 10px;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        ion-text {
+            font-weight: bold;
+        }
+        ion-label {
+            font-size: 12px;
+        }
+    }
+
+    #sectionC {
+        border: red dashed 1px;
+    }
+
+}

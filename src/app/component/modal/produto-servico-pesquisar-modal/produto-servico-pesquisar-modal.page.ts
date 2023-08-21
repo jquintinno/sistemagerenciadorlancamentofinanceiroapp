@@ -12,6 +12,8 @@ export class ProdutoServicoPesquisarModalPage implements OnInit {
 
   public produtoServicoList = [];
 
+  public produtoServicoCadastrarList = [];
+
   public nomeProdutoServico: any;
 
   public isHabilitarCampoDescricao: boolean = false;
@@ -40,6 +42,13 @@ export class ProdutoServicoPesquisarModalPage implements OnInit {
     this.formGroup.controls["produtoServicoModel"].setValue(produtoServico);
     this.isHabilitarCampoDescricao = true;
     this.produtoServicoList = [];
+
+    let produtoServicoselecionado = {
+      codigo: produtoServico.codigo,
+      nome: produtoServico.nome,
+      valor: this.formGroup.controls['valorProdutoServico'].value
+    }
+    this.produtoServicoCadastrarList.push(produtoServicoselecionado);
   }
 
   public limparCampos() {
@@ -67,6 +76,8 @@ export class ProdutoServicoPesquisarModalPage implements OnInit {
     }
 
     this.configuracaoUtilityService.fecharModalParametro(produtoServicoDomain);
+
+    // console.log(object);
 
     // this.produtoServicoService.createOne(produtoServicoDomain).subscribe( response => {
     //   console.log(response);

@@ -54,4 +54,15 @@
 
   </form>
 
+  <ion-grid [fixed]="true" *ngIf="produtoServicoCadastrarList.length != 0">
+    <ion-row>
+      <ion-col class="background">Produto/Serviço</ion-col>
+      <ion-col class="background">Valor</ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of produtoServicoCadastrarList">
+      <ion-col> {{ item.nome }} </ion-col>
+      <ion-col> {{ item.valor }} </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'lancamento-financeiro',
+    redirectTo: 'monitoramento-financeiro',
     pathMatch: 'full'
   },
   {
@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'produto-servico-pesquisar-modal',
     loadChildren: () => import('./component/modal/produto-servico-pesquisar-modal/produto-servico-pesquisar-modal.module').then( m => m.ProdutoServicoPesquisarModalPageModule)
+  },
+  {
+    path: 'monitoramento-financeiro',
+    loadChildren: () => import('./page/monitoramento-financeiro/monitoramento-financeiro.module').then( m => m.MonitoramentoFinanceiroPageModule)
   },
 ];
 
