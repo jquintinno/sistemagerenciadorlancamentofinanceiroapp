@@ -73,10 +73,44 @@
 
   <div id="sectionC">
 
-    <swiper-container>
-      <swiper-slide>Slide 1</swiper-slide>
-      <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
+    <swiper-container 
+      slides-per-view="1.1" 
+      speed="100" 
+      loop="true"
+      css-mode="false" 
+      navigation="false" 
+      pagination="false"
+      scrollbar="false">
+      <swiper-slide *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]" lazy="false">
+
+          <div class="linhaA">
+            <ion-icon name="hardware-chip-outline"></ion-icon>
+            <ion-label>
+              Vencimento da Fatura
+              <p>10/09/2023</p>
+            </ion-label>
+          </div>
+
+          <div class="linhaB">
+            <ion-label>R$ 1.206.124,25</ion-label>
+          </div>
+
+          <div class="linhaC">
+            <ion-label>
+              Titular do Cartão
+              <p>JOSE QUINTINNO</p>
+            </ion-label>
+            <ion-label>
+              Data de Validade
+              <p>01/09/2026</p>
+            </ion-label>
+            <ion-label>
+              Número do Cartão
+              <p>5241 5254 5742 9865</p>
+            </ion-label>
+          </div>
+
+      </swiper-slide>
     </swiper-container>
 
   </div>
