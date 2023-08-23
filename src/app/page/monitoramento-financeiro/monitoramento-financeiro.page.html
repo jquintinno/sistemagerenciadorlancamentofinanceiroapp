@@ -76,12 +76,12 @@
     <swiper-container 
       slides-per-view="1.1" 
       speed="100" 
-      loop="false"
+      loop="true"
       css-mode="false" 
       navigation="false" 
       pagination="false"
       scrollbar="false">
-      <swiper-slide *ngFor="let item of [1,2,3,4,5,6,7,8,9,10]" lazy="false">
+      <swiper-slide *ngFor="let item of [1,2,3,4]" lazy="false">
 
           <div class="linhaA">
             <ion-icon name="hardware-chip-outline"></ion-icon>
@@ -176,7 +176,7 @@
           </div>
 
           <div class="acao">
-            <ion-button expand="block" color="secondary" shape="round">
+            <ion-button expand="block" color="primary" shape="round">
               Pagar Agora
             </ion-button>
           </div>

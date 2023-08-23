@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'monitoramento-financeiro',
+    redirectTo: 'tabmenunavigation',
     pathMatch: 'full'
   },
   {
@@ -48,8 +48,8 @@ const routes: Routes = [
     loadChildren: () => import('./component/modal/produto-servico-pesquisar-modal/produto-servico-pesquisar-modal.module').then( m => m.ProdutoServicoPesquisarModalPageModule)
   },
   {
-    path: 'monitoramento-financeiro',
-    loadChildren: () => import('./page/monitoramento-financeiro/monitoramento-financeiro.module').then( m => m.MonitoramentoFinanceiroPageModule)
+    path: 'tabmenunavigation',
+    loadChildren: () => import('./component/tabmenu/tabmenunavigation/tabmenunavigation.module').then( m => m.TabmenunavigationPageModule)
   },
 ];
 
