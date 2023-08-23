@@ -66,7 +66,7 @@
 
   </div>
 
-  <div class="header">
+  <!-- <div class="header">
     <ion-text>Cartões</ion-text>
     <ion-label>Ver Mais</ion-label>
   </div>
@@ -76,7 +76,7 @@
     <swiper-container 
       slides-per-view="1.1" 
       speed="100" 
-      loop="true"
+      loop="false"
       css-mode="false" 
       navigation="false" 
       pagination="false"
@@ -112,6 +112,107 @@
 
       </swiper-slide>
     </swiper-container>
+
+  </div>
+
+  <div class="header">
+    <ion-text>Transações</ion-text>
+    <ion-label>Ver Mais</ion-label>
+  </div>
+
+  <div id="sectionD">
+
+    <div *ngFor="let item of [1,2,3]" class="card">
+
+      <div class="icone">
+        <ion-icon name="logo-apple"></ion-icon>
+      </div>
+
+      <div class="descricao">
+        <ion-label>
+          <b>Apple</b>
+          <p>iPhone 14 Pro Max</p>
+        </ion-label>
+      </div>
+
+      <div class="valor">
+        <ion-label>
+          <b>R$ 10.000,00</b>
+          </ion-label>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="header">
+    <ion-text>Despesas Fixas</ion-text>
+    <ion-label>Ver Mais</ion-label>
+  </div>
+
+  <div id="sectionE">
+
+    <swiper-container 
+      slides-per-view="2.1" 
+      speed="100" 
+      loop="false"
+      css-mode="false" 
+      navigation="false" 
+      pagination="false"
+      scrollbar="false">
+      <swiper-slide *ngFor="let item of [1,2,3]" lazy="false">
+
+        <div class="card">
+          
+          <div class="icone">
+            <ion-icon name="logo-apple"></ion-icon>
+          </div>
+
+          <div class="descricao">
+            <ion-label>
+              R$ 1.000,00
+              <p>Prime Monthly Subscriptions</p>
+            </ion-label>
+          </div>
+
+          <div class="acao">
+            <ion-button expand="block" color="secondary" shape="round">
+              Pagar Agora
+            </ion-button>
+          </div>
+
+        </div>
+
+      </swiper-slide>
+    </swiper-container>
+
+  </div> -->
+
+  <div class="header">
+    <ion-text>Negociações</ion-text>
+    <ion-label>Ver Mais</ion-label>
+  </div>
+
+  <div id="sectionF">
+
+    <div *ngFor="let item of [1,2,3]" class="card">
+
+      <div class="titulo">
+        <ion-label><b>Banco Inter</b> 
+          <p>Negociação de Cartão de Crédito</p>
+        </ion-label>
+        <ion-text><b>R$ 5.000,00</b></ion-text>
+      </div>
+
+      <div class="skills">
+        <div class="skill">
+          <div class="skill-bar">
+            <div class="skill-per" per="45%" style="max-width: 45%;"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
   </div>
 
