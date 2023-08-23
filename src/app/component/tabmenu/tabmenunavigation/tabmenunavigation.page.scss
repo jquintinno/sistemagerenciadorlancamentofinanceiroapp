@@ -1,0 +1,15 @@
+ion-tabs {
+    ion-tab-bar {
+        --background: rgba(255, 255, 255, 0.860);
+        // border: red dashed 1px;
+        border-radius: 20px 20px 0px 0px;
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+        ion-tab-button {
+            --background: transparent;
+            color: var(--ion-color-primary);
+            --color-selected: blue;
+        }
+    }
+}
