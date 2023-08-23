@@ -1,15 +1,15 @@
-<ion-tabs>
+<ion-tabs #tabMenuNavigation (ionTabsDidChange)="onChangeVerificarTabMenuSelecionado()">
 
   <ion-tab-bar slot="bottom">
 
     <ion-tab-button tab="monitoramento-financeiro">
-      <ion-icon name="grid-outline"></ion-icon>
+      <ion-icon [name]="tabMenuNavigationSelecionado == 'monitoramento-financeiro' ? 'grid' : 'grid-outline'"></ion-icon>
       Monitoramento
     </ion-tab-button>
 
     <ion-tab-button tab="configuracao-usuario">
-      <ion-icon name="settings-outline"></ion-icon>
-      Search
+      <ion-icon [name]="tabMenuNavigationSelecionado == 'configuracao-usuario' ? 'settings' : 'settings-outline'"></ion-icon>
+      Configuração
     </ion-tab-button>
 
   </ion-tab-bar>

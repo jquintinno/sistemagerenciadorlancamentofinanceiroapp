@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonTabs } from '@ionic/angular';
 
 @Component({
   selector: 'app-tabmenunavigation',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabmenunavigationPage implements OnInit {
 
+  @ViewChild("tabMenuNavigation")
+  public tabMenuNavigation: IonTabs;
+
+  public tabMenuNavigationSelecionado: any;
+
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  public onChangeVerificarTabMenuSelecionado() {
+    this.tabMenuNavigationSelecionado = this.tabMenuNavigation.getSelected();
   }
 
 }
