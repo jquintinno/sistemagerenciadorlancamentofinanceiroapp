@@ -14,8 +14,13 @@
     src: url(./assets/font/Maven_Pro/MavenPro-Regular.ttf);
 }
 
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(./assets/font/Poppins/Poppins-Regular.ttf);
+}
+
 * {
-    font-family: MavenPro-Regular;
+    font-family: Poppins-Regular;
 }
 
 // Remover Scroll
