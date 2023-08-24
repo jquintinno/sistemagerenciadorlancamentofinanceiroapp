@@ -46,6 +46,10 @@ export class ConfiguracaoUtilityService {
     this.router.navigate(['/lancamento-financeiro-cadastrar']);
   }
 
+  public redirecionarTelaMonitoramentoFinanceiro() {
+    this.router.navigate(['/tabmenunavigation/monitoramento-financeiro']);
+  }
+
   public async apresentarToastSucessoMensagem(mensagem: String) {
     const toast = await this.toastController.create({
       message: mensagem.toString(),

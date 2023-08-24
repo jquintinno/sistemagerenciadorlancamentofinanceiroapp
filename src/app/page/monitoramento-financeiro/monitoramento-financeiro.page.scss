@@ -1,6 +1,6 @@
 ion-header {
     ion-toolbar {
-        --background: #6236ff;
+        --background: var(--ion-color-primary);
     }
 }
 
@@ -8,7 +8,7 @@ ion-content {
     --background: #ededf5;
 
     #sectionA {
-        background: #6236ff;
+        background: var(--ion-color-primary);
         height: 110px;
 
         .card {

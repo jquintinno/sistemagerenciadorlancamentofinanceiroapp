@@ -1,13 +1,28 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="ion-no-border">
+  
   <ion-toolbar>
-    <ion-title>configuracao-usuario</ion-title>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="configuracaoUtilityService.redirecionarTelaMonitoramentoFinanceiro()">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  
+    <ion-title>&nbsp;</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button id="notification">
+        <ion-icon slot="start" name="notifications-outline"></ion-icon>
+        <span>9</span>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
+  
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">configuracao-usuario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+
+
+
 </ion-content>

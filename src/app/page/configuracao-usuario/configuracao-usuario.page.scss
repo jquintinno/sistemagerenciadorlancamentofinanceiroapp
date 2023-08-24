@@ -1,0 +1,34 @@
+ion-header {
+    ion-toolbar {
+        ion-buttons {
+            ion-button {
+                ion-icon {
+                    color: var(--ion-color-primary);
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+}
+
+ion-content {
+    --background: var(--app-color-background);
+}
+
+#notification {
+    span {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--ion-color-danger);
+        top: 1%;
+        right: 14%;
+        font-size: 8px;
+        color: var(--ion-color-primary-contrast);
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConfiguracaoUtilityService } from 'src/app/utility/configuracao-utility.service';
 
 @Component({
   selector: 'app-configuracao-usuario',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracaoUsuarioPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public configuracaoUtilityService: ConfiguracaoUtilityService
+  ) { }
 
   ngOnInit() {
   }

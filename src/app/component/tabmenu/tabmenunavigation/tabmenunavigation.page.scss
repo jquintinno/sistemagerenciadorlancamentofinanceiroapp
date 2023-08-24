@@ -9,7 +9,7 @@ ion-tabs {
         ion-tab-button {
             --background: transparent;
             color: var(--ion-color-primary);
-            --color-selected: blue;
+            --color-selected: var(--ion-color-primary);
         }
     }
 }
